@@ -32,7 +32,7 @@ It is made entirely using Visual Studio Code where all the following files were 
 * JQuery
 * APIs
 ** [Country Facts](https://rapidapi.com/richardarthur228/api/country-facts/)
-** 
+** [Cost Of Living](https://rapidapi.com/traveltables/api/cost-of-living-and-prices/)
 
 ## Requirements
 
