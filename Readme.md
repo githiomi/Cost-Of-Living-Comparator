@@ -4,13 +4,15 @@
 
 ## Introduction
 
-This is a website which allows users to locate capital cities around the world and to compare the cost of living in these capitals by making use of multiple APIs
+This is a website which allows users to locate capital cities around the world and to compare the cost of living in these capitals by making use of multiple APIs to show some basic information about each country and using mapping software such as Google maps or Bing maps to display the location of the capital city.
+
+The website is aimed at allowing users to be able to select a country and view its background information, a map and information on the current cost of living in the capital of the selected country.
 
 ## Website Preview
 
   ![SCREENSHOT](Resources/Images/Screenshot.png)
 
-  The link to the website desgn can be found [here](https://www.figma.com/file/2tc99f6AKhVpyL1cgpMNiz/Cost-Of-Living-Comparator?node-id=6%3A81&t=QUpEC61uM9045iAp-0) on Figma
+  The link to the website design can be found [HERE](https://www.figma.com/file/2tc99f6AKhVpyL1cgpMNiz/Cost-Of-Living-Comparator?node-id=6%3A81&t=QUpEC61uM9045iAp-0) on Figma
 
 ## Compatibility
 
@@ -20,8 +22,8 @@ This projects has been tested on mobiles, tablets and laptops. Thorough testing 
 
 The link to the live pages:
 
-* GitHub Live pages can be found [here](https://https://githiomi.github.io/Cost-Of-Living-Comparator)
-* Heroku Live pages can be found [here](https://github.com/githiomi/Cost-Of-Living-Comparator.git)
+* GitHub Live pages can be found [HERE](https://https://githiomi.github.io/Cost-Of-Living-Comparator)
+* Heroku Live pages can be found [HERE](https://github.com/githiomi/Cost-Of-Living-Comparator.git)
 
 ## Technologies Used
 
@@ -45,7 +47,7 @@ You will need to have the following installed on your system:
 
 ## Setup Instructions
 
-* Git clone [This](https://github.com/githiomi/Cost-Of-Living-Comparator.git) repository into your terminal.  
+* Git clone [THIS](https://github.com/githiomi/Cost-Of-Living-Comparator.git) repository into your terminal.  
 * Open the folder in your favourite editor (for example Visual Studio Code)
 * Install the live server extension on your version of Visual Studio Code
 * Open website using the live server extension
