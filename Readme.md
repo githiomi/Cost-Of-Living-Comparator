@@ -10,6 +10,8 @@ This is a website which allows users to locate capital cities around the world a
 
   ![SCREENSHOT](Resources/Images/Screenshot.png)
 
+  The link to the website desgn can be found [here](https://www.figma.com/file/2tc99f6AKhVpyL1cgpMNiz/Cost-Of-Living-Comparator?node-id=6%3A81&t=QUpEC61uM9045iAp-0) on Figma
+
 ## Compatibility
 
 This projects has been tested on mobiles, tablets and laptops. Thorough testing has ensured that it runs with no problems to report.
