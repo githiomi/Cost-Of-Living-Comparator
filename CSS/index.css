@@ -1,0 +1,75 @@
+/* Charset */
+@charset 'UTF-8';
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Poppins:wght@400;700&display=swap');
+
+/* Variables */
+:root{ 
+    --main-background-color: #1E1E1E;
+    --white-text-color: white;
+    --money-green: green;
+}
+
+/* Common CSS */
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.dollar{
+    color: var(--money-green);
+}
+
+/* Index Page Start */
+body{
+    background-color: var(--main-background-color);
+    color: var(--white-text-color);
+    min-height: 100vh;
+}
+
+#background-video{
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    size: contain;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    #background-video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    #background-video{
+        width: auto;
+        height: 100%;
+    }
+}
+
+.container{
+    z-index: 2;
+}
+
+.pageTitle h1{
+    text-align: center;
+    font-size: 80px;
+    letter-spacing: 1.4px;
+    font-family: 'Love Ya Like A Sister', sans-serif;
+}
+/* Index Page End */
