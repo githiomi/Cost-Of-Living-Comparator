@@ -5,69 +5,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Poppins:wght@400;700&display=swap');
 
 /* Variables */
-:root{ 
+:root {
     --main-background-color: #1E1E1E;
     --white-text-color: white;
     --money-green: green;
+    --white: white;
+    --transparent: transparent;
 }
 
 /* Common CSS */
-*{
+* {
     margin: 0;
-    padding: 0; 
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
-li{
+li {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
-    color: white;
+    color: var(--white);
 }
 
-.dollar{
+.dollar {
     color: var(--money-green);
     font-family: 'Love Ya Like A Sister', sans-serif;
     letter-spacing: 1.5px;
 }
 
-.activeTab{
+.activeTab {
     color: var(--money-green);
 }
 
 /* Index Page Start */
-body{
+body {
     width: 100%;
     background-color: var(--main-background-color);
+    /* background: linear-gradient(var(--main-background-color), rgb(20, 30, 20)); */
     color: var(--white-text-color);
 }
 
-.navigation{
+.navigation {
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav ul{
+.nav ul {
     display: flex;
 }
 
-.nav ul li a{
+.nav ul li a {
     font-size: 20px;
     padding: 10px 40px;
 }
 
-.nav ul li a:hover{
+.nav ul li a:hover {
     color: var(--money-green);
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
 }
 
-.pageTitle{
+.pageTitle {
     min-height: 70vh;
     display: flex;
     flex-direction: column;
@@ -76,7 +80,8 @@ body{
     text-align: center;
 }
 
-.pageTitle h1, .typewriter{
+.pageTitle h1,
+.typewriter {
     text-transform: uppercase;
     text-align: center;
     font-size: 80px;
@@ -84,43 +89,95 @@ body{
     font-family: 'Love Ya Like A Sister', sans-serif;
 }
 
-.subHeader{
-    font-size: 24px;
+.subHeader {
+    font-size: 22px;
     text-transform: uppercase;
     text-align: center;
 }
 
-.dribble{
+.dribble {
     text-align: center;
-    animation: bounce 3s infinite;
-    transition: animation infinite ease-in-out;
 }
 
-.dribble a{
+.dribble a {
     cursor: pointer;
 }
 
-.dribble a i{
+.dribble a i {
     color: var(--money-green);
     font-size: 40px;
 }
 
-/* Bounce animation */
-@keyframes bounce {
-    0%, 40%, 80%{
-        transform: translateY(0);
-    }
-    20%, 60%, 100%{
-        transform: translateY(-10px);
-    }
-    
-}
-
-.search{
+.search {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
+.searchBars {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.searchBar {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
+
+.searchTitle {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.dropdown button {
+    width: 70%;
+    padding: 15px 0;
+    border: 2px solid var(--white);
+    ;
+    border-radius: 30px;
+    color: var(--white-text-color);
+    text-transform: uppercase;
+}
+
+.dropdown button:hover {
+    transform: scale(1.03);
+    color: var(--white-text-color);
+    box-shadow: 1px 1px 5px white;
+    transition: all .4s ease-in-out;
+}
+
+.dropdown ul {
+    width: 70%;
+    border-radius: 15px;
+}
+
+.dropdown ul li a {
+    color: var(--money-green);
+}
+
+.compareText {
+    color: var(--money-green);
+}
+
+.pageBtn {
+    margin-top: 100px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: 2px solid var(--money-green);
+    border-radius: 15px;
+    background-color: var(--transparent);
+    color: var(--white);
+}
+
+.pageBtn:hover {
+    transform: scale(1.02);
+    box-shadow: 1px 1px 8px var(--money-green);
+    transition: all .3s ease-in-out;
+}
+
 /* Index Page End */
