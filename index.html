@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,32 +19,93 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Stylesheets -->
-    <script src="https://kit.fontawesome.com/5ee953f2e0.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome -->
+
     <link rel="stylesheet" href="CSS/index.css" type="text/css"> <!-- Custom CSS file -->
 
 </head>
+
 <body>
 
     <!-- Main Start -->
     <main>
 
-        <video src="Resources/Videos/Stock Market Background.mp4" id="background-video" loop muted autoplay></video>
+        <!-- <video src="Resources/Videos/Stock Market Background.mp4" id="background-video" loop muted autoplay></video> -->
 
         <div class="container">
 
-            <nav class="navigation">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="HTML/about.html">HOME</a></li>
-                    <li><a href="HTML/contact.html">HOME</a></li>
-                </ul>
-            </nav>
+            <!-- First Part Start -->
+            <div id="page1">
 
-            <section class="pageTitle">
-                <h1>CO<span class="dollar">&dollar;</span>T OF LIVING COMPARATOR<span class="dollar">_</span></h1>
-            </section>
+                <nav class="navigation">
+                    <div class="logo">
+                        <a href="index.html" class="logoLink">
+                            <img src="Resources/Images/logo.png" alt="Website Logo" width="100px">
+                        </a>
+                    </div>
+                    <div class="nav">
+                        <ul>
+                            <li><a href="index.html" class="activeTab">HOME</a></li>
+                            <li><a href="HTML/about.html">ABOUT</a></li>
+                            <li><a href="HTML/contact.html">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </nav>
 
-            <section></section>
+                <section class="pageTitle">
+                    <h1>CO<span class="dollar">&dollar;</span>T OF LIVING <br /> <span class="typewriter"></span> </h1>
+
+                    <p class="subHeader">
+                        Locate capital cities and compare the cost of living
+                    </p>
+                </section>
+
+                <div class="dribble">
+                    <a href="#page2">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <!-- <img src="Resources/Images/dribble.png" alt="Scroll Down Dribble" class="dribbleBounce"
+                            width="50px"> -->
+                    </a>
+                </div>
+
+            </div>
+            <!-- First Part End -->
+
+            <!-- Second Page Start -->
+            <div id="page2">
+
+                <section class="search">
+
+                    <div class="searchBars">
+
+                        <div class="searchBar">
+
+                            <h3 class="searchTitle">BASE TOWN:</h3>
+
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Action
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+            <!-- Second Page End -->
 
         </div>
     </main>
@@ -62,6 +124,7 @@
 
     <!-- JavaScript -->
     <script src="JS/index.js"></script>
-    
+
 </body>
+
 </html>

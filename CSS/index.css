@@ -30,46 +30,97 @@ a{
 
 .dollar{
     color: var(--money-green);
+    font-family: 'Love Ya Like A Sister', sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.activeTab{
+    color: var(--money-green);
 }
 
 /* Index Page Start */
 body{
+    width: 100%;
     background-color: var(--main-background-color);
     color: var(--white-text-color);
-    min-height: 100vh;
 }
 
-#background-video{
-    position: relative;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    size: contain;
+.navigation{
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (min-aspect-ratio: 16/9) {
-    #background-video{
-        width: 100%;
-        height: auto;
-    }
+.nav ul{
+    display: flex;
 }
 
-@media (max-aspect-ratio: 16/9) {
-    #background-video{
-        width: auto;
-        height: 100%;
-    }
+.nav ul li a{
+    font-size: 20px;
+    padding: 10px 40px;
 }
 
-.container{
-    z-index: 2;
+.nav ul li a:hover{
+    color: var(--money-green);
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
 }
 
-.pageTitle h1{
+.pageTitle{
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.pageTitle h1, .typewriter{
+    text-transform: uppercase;
     text-align: center;
     font-size: 80px;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.5px;
     font-family: 'Love Ya Like A Sister', sans-serif;
+}
+
+.subHeader{
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.dribble{
+    text-align: center;
+    animation: bounce 3s infinite;
+    transition: animation infinite ease-in-out;
+}
+
+.dribble a{
+    cursor: pointer;
+}
+
+.dribble a i{
+    color: var(--money-green);
+    font-size: 40px;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 40%, 80%{
+        transform: translateY(0);
+    }
+    20%, 60%, 100%{
+        transform: translateY(-10px);
+    }
+    
+}
+
+.search{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 /* Index Page End */
