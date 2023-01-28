@@ -39,6 +39,8 @@ a {
 
 .activeTab {
     color: var(--money-green);
+    text-decoration: underline;
+    text-decoration-style: dashed;
 }
 
 /* Index Page Start */
@@ -105,7 +107,7 @@ body {
 
 .dribble a i {
     color: var(--money-green);
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .search {
@@ -176,7 +178,7 @@ body {
 
 .pageBtn:hover {
     transform: scale(1.02);
-    box-shadow: 1px 1px 8px var(--money-green);
+    box-shadow: 2px 2px 8px var(--money-green);
     transition: all .3s ease-in-out;
 }
 
