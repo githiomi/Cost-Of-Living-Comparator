@@ -51,6 +51,60 @@
     </main>
     <!-- Main End -->
 
+    <section id="form">
+        <div class="container">
+
+            <div class="formSvg">
+                <div class="form">
+
+                    <div class="serverStatus">
+                        <p class="status text-center">Not Connected To The Server :(</p>
+                        <button id="connect" class="connectBtn">Connect Now!</button>
+                    </div>
+    
+                    <!-- Form Start -->
+                    <form id="contactForm" action="post">
+    
+                        <div class="names">
+                            <!-- First name -->
+                            <!-- <label for="f_name">First Name:</label> -->
+                            <input type="text" name="f_name" id="f_name" class="textInput" required
+                                placeholder="First Name">
+    
+                            <!-- Last name -->
+                            <!-- <label for="l_name">Last Name:</label> -->
+                            <input type="text" name="f_name" id="l_name" class="textInput" required placeholder="Last Name">
+    
+                        </div>
+    
+                        <!-- Email -->
+                        <!-- <label for="email">Email Address:</label> -->
+                        <input type="text" name="email" id="email" class="textInput" required placeholder="Email Address">
+    
+                        <!-- first name -->
+                        <!-- <label for="message">Your Message:</label> -->
+                        <textarea type="textarea" name="message" id="message" class="textInput" required
+                            placeholder="What would you like to tell us?"></textarea>
+
+                        <!-- Submit btn -->
+                        <div class="submit">
+                            <button class="submitBtn pageBtn">Submit</button>
+                        </div>
+    
+                    </form>
+                    <!-- Form End -->
+    
+                </div>
+
+                <div class="svg">
+                    <img src="../Resources/Images/contact_svg.png" alt="">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
     <!-- Scripts Start -->
     <!-- Bootstrap Js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -64,7 +118,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <!-- JavaScript -->
-    <script src="../JS/index.js"></script>
+    <script src="../JS/contact.js"></script>
     <!-- Scripts End -->
 </body>
 
