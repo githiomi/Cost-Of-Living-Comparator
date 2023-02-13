@@ -242,6 +242,7 @@ video {
     display: block;
     margin: 1rem auto;
     font-size: 15px;
+    text-transform: uppercase;
     background-color: var(--transparent);
     border: 2px solid var(--money-green);
     border-radius: 10px;
