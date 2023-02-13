@@ -19,7 +19,10 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> <!-- Box Icons Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome -->
+
     <link rel="stylesheet" href="../CSS/index.css" type="text/css"> <!-- Custom CSS file -->
 
 </head>
@@ -34,14 +37,17 @@
             <nav class="navigation">
                 <div class="logo">
                     <a href="../index.html" class="logoLink">
-                        <img src="../Resources/Images/logo.png" alt="Website Logo" width="100px">
+                        <img src="../Resources/Images/logo.png" alt="Website Logo" width="80px">
                     </a>
+                </div>
+                <div class="toggler">
+                    <i class="fa-solid fa-bars-staggered"></i>
                 </div>
                 <div class="nav">
                     <ul>
-                        <li><a href="../index.html">HOME</a></li>
+                        <li><a href="../index.html" class="activeTab">HOME</a></li>
                         <li><a href="about.html">ABOUT</a></li>
-                        <li><a href="contact.html" class="activeTab">CONTACT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
                     </ul>
                 </div>
             </nav>
@@ -61,26 +67,28 @@
                         <p class="status text-center">Not Connected To The Server :(</p>
                         <button id="connect" class="connectBtn">Connect Now!</button>
                     </div>
-    
+
                     <!-- Form Start -->
                     <form id="contactForm" action="post">
-    
+
                         <div class="names">
                             <!-- First name -->
                             <!-- <label for="f_name">First Name:</label> -->
                             <input type="text" name="f_name" id="f_name" class="textInput" required
                                 placeholder="First Name">
-    
+
                             <!-- Last name -->
                             <!-- <label for="l_name">Last Name:</label> -->
-                            <input type="text" name="f_name" id="l_name" class="textInput" required placeholder="Last Name">
-    
+                            <input type="text" name="f_name" id="l_name" class="textInput" required
+                                placeholder="Last Name">
+
                         </div>
-    
+
                         <!-- Email -->
                         <!-- <label for="email">Email Address:</label> -->
-                        <input type="text" name="email" id="email" class="textInput" required placeholder="Email Address">
-    
+                        <input type="text" name="email" id="email" class="textInput" required
+                            placeholder="Email Address">
+
                         <!-- first name -->
                         <!-- <label for="message">Your Message:</label> -->
                         <textarea type="textarea" name="message" id="message" class="textInput" required
@@ -90,10 +98,10 @@
                         <div class="submit">
                             <button class="submitBtn pageBtn">Submit</button>
                         </div>
-    
+
                     </form>
                     <!-- Form End -->
-    
+
                 </div>
 
                 <div class="svg">

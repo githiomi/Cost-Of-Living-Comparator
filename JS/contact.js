@@ -1,4 +1,14 @@
 // Contact Page JS
+
+// Responsiveness
+const toggler = document.querySelector('.toggler i');
+const menu = document.querySelector('.nav');
+
+toggler.addEventListener('click', () => {
+    // When clicked, toggle menu
+    menu.classList.toggle('show');
+});
+
 // Connect to the DB
 const connectBtn = document.getElementById("connect");
 

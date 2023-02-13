@@ -12,6 +12,9 @@
     --white: white;
     --warning-red: red;
     --transparent: transparent;
+    --linear-bg: linear-gradient(var(--main-background-color), rgb(20, 30, 20));
+    --disabled: grey;
+    --dark-grey: #333;
 }
 
 /* Common CSS */
@@ -44,6 +47,7 @@ a {
 
 /* Index Page Start */
 body {
+    min-height: 100vh;
     width: 100%;
     background-color: var(--main-background-color);
     background: linear-gradient(var(--main-background-color), rgb(20, 30, 20));
@@ -62,8 +66,9 @@ body {
     align-items: center;
 }
 
-.nav{
+.nav {
     transition: all 0.5s ease-in-out;
+    z-index: 2;
 }
 
 .nav ul {
@@ -200,12 +205,16 @@ body {
 /* Index Page End */
 
 /* Contact Page Start */
+#form .container{
+    height: 80vh;
+    display: grid;
+    place-items: center;
+}
+
 .formSvg {
-    height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    justify-content: center;
+    place-items: center;
 }
 
 .status {
@@ -229,8 +238,8 @@ body {
     margin: 1rem auto;
     font-size: 15px;
     color: black;
-    background-color: grey;
-    border: 2px solid grey;
+    background-color: var(--disabled);
+    border: 2px solid var(--disabled);
     border-radius: 10px;
     padding: 0.3rem 0.5rem;
 }
@@ -241,7 +250,7 @@ body {
 }
 
 form {
-    margin-top: 4rem;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -273,7 +282,7 @@ textarea {
 }
 
 .names {
-    width: 74%;
+    width: 75%;
     display: flex;
     justify-content: space-between;
 }
@@ -306,6 +315,8 @@ textarea {
 /* Responsiveness  */
 /* Medium Screens */
 @media all and (max-width: 992px) {
+
+    /* Index */
     .searchBars {
         padding: 10px;
         flex-direction: column;
@@ -319,30 +330,39 @@ textarea {
     .subHeader {
         font-size: 22px;
     }
+
+    /* Contact Page */
+    .formSvg {
+        display: flex;
+    }
+
+    .svg {
+        display: none;
+    }
 }
 
 /* Mobile view */
 @media all and (max-width: 764px) {
-    .navigation{
+    .navigation {
         position: relative;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .toggler i{
+    .toggler i {
         position: absolute;
         top: 50px;
         right: 0;
     }
 
-    .nav{
+    .nav {
         display: none;
     }
 
-    .show{
+    .show {
         width: 100%;
         margin: 1rem auto;
-        background-color: rgba(153, 153, 153, 0.2);
+        background-color: var(--dark-grey);
         border-radius: 15px;
         padding-top: .5rem;
         display: block;
@@ -350,12 +370,12 @@ textarea {
         top: 100px;
     }
 
-    .nav ul{
+    .nav ul {
         flex-direction: column;
         width: 100%;
     }
 
-    .nav ul li{
+    .nav ul li {
         padding: .5rem 0;
     }
 
@@ -385,7 +405,7 @@ textarea {
         font-size: 20px;
     }
 
-    .dropdown button{
+    .dropdown button {
         font-size: 18px;
     }
 
@@ -400,10 +420,7 @@ textarea {
 /* Small Screen */
 @media all and (max-width: 574px) {
 
-    .container {
-        overflow: hidden;
-    }
-
+    /* Index Page */
     .pageTitle h1,
     .typewriter {
         font-size: 50px;
@@ -425,12 +442,29 @@ textarea {
         margin: 5px;
     }
 
-    .dropdown button{
+    .dropdown button {
         font-size: 16px;
     }
 
     .searchTitle {
         padding: 10px 0;
         font-size: 17px;
+    }
+
+    /* Contact Page */
+    .form {
+        width: 100%;
+    }
+
+    .names {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .submitBtn {
+        margin-top: 10px;
+        padding: 5px 15px;
+        font-size: 16px;
     }
 }
