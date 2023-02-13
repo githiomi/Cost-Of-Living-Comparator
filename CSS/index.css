@@ -51,7 +51,7 @@ body {
     min-height: 100vh;
     width: 100%;
     background-color: var(--main-background-color);
-    background: linear-gradient(var(--main-background-color), rgb(20, 30, 20));
+    /* background: linear-gradient(var(--main-background-color), rgb(20, 30, 20)); */
     color: var(--white-text-color);
 }
 
@@ -121,7 +121,7 @@ video {
 .typewriter {
     text-transform: uppercase;
     text-align: center;
-    font-size: 80px;
+    font-size: 75px;
     letter-spacing: 1.5px;
     font-family: 'Love Ya Like A Sister', sans-serif;
 }

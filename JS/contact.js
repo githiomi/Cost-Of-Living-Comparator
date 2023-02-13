@@ -6,10 +6,12 @@ connectBtn.addEventListener("click", (e) => {
     if (connectBtn.classList.contains("disabled")) {
         alert("Already connected to the database! Don't click me.");
     } else {
-        e.preventDefault();~
+        e.preventDefault();
 
         // Show an alert dialog
         alert("Connecting to the Database Server now...");
+
+        
 
         const status = document.querySelector('.status');
         // Change text and color
