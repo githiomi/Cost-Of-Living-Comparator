@@ -46,7 +46,7 @@ a {
 body {
     width: 100%;
     background-color: var(--main-background-color);
-    /* background: linear-gradient(var(--main-background-color), rgb(20, 30, 20)); */
+    background: linear-gradient(var(--main-background-color), rgb(20, 30, 20));
     color: var(--white-text-color);
 }
 
@@ -62,27 +62,30 @@ body {
     align-items: center;
 }
 
-.sticky {
-    position: sticky;
-    top: 0;
-    background-color: var(--main-background-color);
-    border-bottom: 1px solid var(--money-green);
-    z-index: 2;
+.nav{
+    transition: all 0.5s ease-in-out;
 }
 
 .nav ul {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .nav ul li a {
-    font-size: 18px;
-    padding: 5px 40px;
+    font-size: 17px;
+    padding: 5px 30px;
 }
 
 .nav ul li a:hover {
     color: var(--money-green);
     transition: all 0.5s ease-in-out;
+}
+
+.toggler i {
+    color: var(--money-green);
+    font-size: 25px;
+    display: none;
 }
 
 .pageTitle {
@@ -210,7 +213,7 @@ body {
     text-transform: uppercase;
 }
 
-.connectBtn{
+.connectBtn {
     display: block;
     margin: 1rem auto;
     font-size: 15px;
@@ -221,7 +224,7 @@ body {
     color: var(--white-text-color);
 }
 
-.disabled{
+.disabled {
     display: block;
     margin: 1rem auto;
     font-size: 15px;
@@ -232,7 +235,7 @@ body {
     padding: 0.3rem 0.5rem;
 }
 
-.connectBtn:hover{
+.connectBtn:hover {
     transform: scale(0.95);
     transition: all 0.5s ease-in-out;
 }
@@ -299,3 +302,135 @@ textarea {
 }
 
 /* Contact Page End */
+
+/* Responsiveness  */
+/* Medium Screens */
+@media all and (max-width: 992px) {
+    .searchBars {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .pageTitle h1,
+    .typewriter {
+        font-size: 65px;
+    }
+
+    .subHeader {
+        font-size: 22px;
+    }
+}
+
+/* Mobile view */
+@media all and (max-width: 764px) {
+    .navigation{
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggler i{
+        position: absolute;
+        top: 50px;
+        right: 0;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .show{
+        width: 100%;
+        margin: 1rem auto;
+        background-color: rgba(153, 153, 153, 0.2);
+        border-radius: 15px;
+        padding-top: .5rem;
+        display: block;
+        position: absolute;
+        top: 100px;
+    }
+
+    .nav ul{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav ul li{
+        padding: .5rem 0;
+    }
+
+    .pageTitle h1,
+    .typewriter {
+        font-size: 60px;
+    }
+
+    .subHeader {
+        font-size: 20px;
+    }
+
+    .toggler i {
+        display: block;
+    }
+
+    .dribble a i {
+        font-size: 40px;
+    }
+
+    .searchBar {
+        margin: 10px;
+    }
+
+    .searchTitle {
+        padding: 20px 0;
+        font-size: 20px;
+    }
+
+    .dropdown button{
+        font-size: 18px;
+    }
+
+    .pageBtn {
+        margin-top: 70px;
+        padding: 8px 13px;
+        font-size: 18px;
+    }
+
+}
+
+/* Small Screen */
+@media all and (max-width: 574px) {
+
+    .container {
+        overflow: hidden;
+    }
+
+    .pageTitle h1,
+    .typewriter {
+        font-size: 50px;
+    }
+
+    .subHeader {
+        font-size: 18px;
+    }
+
+    .dribble a i {
+        font-size: 30px;
+    }
+
+    .searchBars {
+        padding: 5px;
+    }
+
+    .searchBar {
+        margin: 5px;
+    }
+
+    .dropdown button{
+        font-size: 16px;
+    }
+
+    .searchTitle {
+        padding: 10px 0;
+        font-size: 17px;
+    }
+}
