@@ -43,6 +43,7 @@ a {
 
 .activeTab {
     color: var(--money-green);
+    font-weight: bold;
 }
 
 /* Index Page Start */
@@ -57,6 +58,19 @@ body {
 #page1,
 #page2 {
     position: relative;
+    min-height: 100vh;
+}
+
+/* Video */
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
 }
 
 .navigation {
@@ -89,7 +103,8 @@ body {
 
 .toggler i {
     color: var(--money-green);
-    font-size: 25px;
+    font-size: 28px;
+    padding: 5px;
     display: none;
 }
 
@@ -153,14 +168,15 @@ body {
 
 .searchTitle {
     text-align: center;
+    font-size: 20px;
     padding: 50px 0;
 }
 
 .dropdown button {
+    font-size: 17px;
     width: 70%;
     padding: 15px 0;
     border: 2px solid var(--white);
-    ;
     border-radius: 30px;
     color: var(--white-text-color);
     text-transform: uppercase;
@@ -188,8 +204,8 @@ body {
 
 .pageBtn {
     margin-top: 100px;
-    padding: 10px 20px;
-    font-size: 20px;
+    padding: 8px 17px;
+    font-size: 18px;
     border: 2px solid var(--money-green);
     border-radius: 15px;
     background-color: var(--transparent);
@@ -205,7 +221,7 @@ body {
 /* Index Page End */
 
 /* Contact Page Start */
-#form .container{
+#form .container {
     height: 80vh;
     display: grid;
     place-items: center;
@@ -214,7 +230,7 @@ body {
 .formSvg {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    place-items: center;
+    gap: 1rem;
 }
 
 .status {
@@ -353,6 +369,7 @@ textarea {
         position: absolute;
         top: 50px;
         right: 0;
+        transform: translateY(-50%);
     }
 
     .nav {
@@ -385,7 +402,7 @@ textarea {
     }
 
     .subHeader {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .toggler i {
@@ -394,10 +411,6 @@ textarea {
 
     .dribble a i {
         font-size: 40px;
-    }
-
-    .searchBar {
-        margin: 10px;
     }
 
     .searchTitle {
@@ -427,7 +440,7 @@ textarea {
     }
 
     .subHeader {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .dribble a i {
@@ -460,6 +473,11 @@ textarea {
         width: 100%;
         flex-direction: column;
         align-items: center;
+    }
+
+    input,
+    textarea {
+        width: 100%;
     }
 
     .submitBtn {
