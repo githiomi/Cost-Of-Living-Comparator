@@ -46,6 +46,14 @@ a {
     font-weight: bold;
 }
 
+.sectionHeader{
+    text-transform: uppercase;
+    color: var(--money-green);
+    padding: 0 1rem;
+    font-weight: bold;
+    letter-spacing: .2rem;
+}
+
 /* Index Page Start */
 body {
     min-height: 100vh;
@@ -74,6 +82,7 @@ video {
 }
 
 .navigation {
+    height: 150px;
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
@@ -89,6 +98,11 @@ video {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.nav ul li:hover{
+    transform: translateY(-2px);
+    transition: all 0.5s ease-in-out;
 }
 
 .nav ul li a {
@@ -220,6 +234,58 @@ video {
 
 /* Index Page End */
 
+/* About Page Start */
+#about .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#about .image img{
+    height: calc(100vh - 150px);
+    width: 480px;
+    border-radius: 0 200px 0 0;
+}
+
+#about .image img:hover{
+    transform: translateY(-3px);
+    transition: all .3s ease-in-out;
+}
+
+.bibliography .bioText {
+    padding: 1rem;
+    font-size: 18px;
+}
+
+.bibliography .bioText:hover {
+    transform: scale(1.01);
+    transition: all 0.5s ease-in-out;
+}
+
+.socials ul{
+    width: 100%;
+    padding: 0 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials .fa-brands{
+    font-size: 35px;
+    color: var(--white);
+    margin: 1.5rem;
+}
+
+.socials .fa-brands:hover{
+    transform: translateY(-5px);
+    color: var(--money-green);
+    transition: all 0.5s ease-in-out;
+}
+
+/* About Page End */
+
 /* Contact Page Start */
 #form .container {
     height: 80vh;
@@ -267,7 +333,7 @@ video {
 }
 
 form {
-    margin-top: 5rem;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,7 +342,7 @@ form {
 
 input,
 textarea {
-    width: 70%;
+    width: 94%;
     padding: 1rem;
     margin: 1rem;
     border-radius: 10px;
@@ -295,11 +361,11 @@ textarea:focus {
 }
 
 textarea {
-    height: 150px;
+    height: 180px;
 }
 
 .names {
-    width: 75%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -330,6 +396,20 @@ textarea {
 /* Contact Page End */
 
 /* Responsiveness  */
+
+/* Large Screens */
+@media all and (max-width: 1092px) {
+    #about .container {
+        flex-direction: column;
+    }
+
+    #about .image img{
+        height: 500px;
+        width: 330px;
+        border-radius: 10px;
+    }
+}
+
 /* Medium Screens */
 @media all and (max-width: 992px) {
 
@@ -485,5 +565,17 @@ textarea {
         margin-top: 10px;
         padding: 5px 15px;
         font-size: 16px;
+    }
+}
+
+@media all and (max-width: 350px) {
+    /* Index Page */
+    .pageTitle h1,
+    .typewriter {
+        font-size: 30px;
+    }
+
+    .subHeader {
+        font-size: 15px;
     }
 }

@@ -11,8 +11,6 @@ connectBtn.addEventListener("click", (e) => {
         // Show an alert dialog
         alert("Connecting to the Database Server now...");
 
-        
-
         const status = document.querySelector('.status');
         // Change text and color
         status.innerHTML = "Now connected successfully :)";
