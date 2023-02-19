@@ -1,13 +1,13 @@
 <!-- Start PHP -->
 <?php
 
-// PHP file that will create the "Messages" table in the "Backpacker's Hostel" DB
+// PHP file that will create the "Messages" table in the "Cost Of Living Comparator" DB
 
 // Connection constants:
 $servername = "localhost";
 $username = "root";
 $password = "";
-$databasename = "backpackers_hostel";
+$databasename = "cost_of_living_comparator";
 
 // Connect to the database
 try {

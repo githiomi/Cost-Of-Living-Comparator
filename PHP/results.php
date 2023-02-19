@@ -1,13 +1,13 @@
 <!-- Start PHP -->
 <?php
 
-// PHP file that will return the data from the "Messages" table in the "Backpacker's Hostel" DB
+// PHP file that will return the data from the "Messages" table in the "Cost Of Living Comparator" DB
 
 // Connection constants:
 $servername = "localhost";
 $username = "root";
 $password = "";
-$databasename = "backpackers_hostel";
+$databasename = "cost_of_living_comparator";
 
 // Connect to the database
 try {
@@ -37,11 +37,11 @@ $results = $query -> fetchAll(PDO::FETCH_ASSOC);
 // Loop through alll results and print
 foreach ($results as $row) {
     echo "<br/>";
-    echo "<span style='font-weight:bold'>Message id:</span>" .$row['id'] . "<br />";
-    echo $row['first_name'] . "<br />"; 
-    echo $row['last_name'] . "<br />"; 
-    echo $row['email_address'] . "<br />"; 
-    echo $row['message'] . "<br />"; 
+    echo "<span style='font-weight:bold'>Message id:</span> " .$row['id'] . "<br />";
+    echo "<span style='font-weight:bold'>First Name:</span> " .$row['first_name'] . "<br />"; 
+    echo "<span style='font-weight:bold'>Last Name:</span> " .$row['last_name'] . "<br />"; 
+    echo "<span style='font-weight:bold'>Email Address:</span> " .$row['email_address'] . "<br />"; 
+    echo "<span style='font-weight:bold'>Message sent:</span> " .$row['message'] . "<br />"; 
     echo "<hr />";
 }
 

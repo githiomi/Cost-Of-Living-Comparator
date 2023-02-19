@@ -310,7 +310,7 @@ video {
     text-transform: uppercase;
 }
 
-.connectBtn {
+.connectBtn, .viewMessageBtn {
     display: block;
     margin: 1rem auto;
     font-size: 15px;
@@ -319,6 +319,10 @@ video {
     border: 2px solid var(--money-green);
     border-radius: 10px;
     padding: 0.3rem 0.5rem;
+    color: var(--white-text-color);
+}
+
+.connectBtn a, .viewMessageBtn a{
     color: var(--white-text-color);
 }
 
@@ -333,7 +337,7 @@ video {
     padding: 0.3rem 0.5rem;
 }
 
-.connectBtn:hover {
+.connectBtn:hover, .viewMessageBtn:hover {
     transform: scale(0.95);
     transition: all 0.5s ease-in-out;
 }

@@ -1,13 +1,13 @@
 <!-- Start PHP -->
 <?php
 
-// PHP file that will insert user input data into the "Messages" table in the "Backpacker's Hostel" DB from the form
+// PHP file that will insert user input data into the "Messages" table in the "Cost Of Living Comparator" DB from the form
 
 // Connection constants:
 $servername = "localhost";
 $username = "root";
 $password = "";
-$databasename = "backpackers_hostel";
+$databasename = "cost_of_living_comparator";
 
 // Connect to the database
 try {
@@ -35,9 +35,9 @@ $query -> bindParam(3, $email_address);
 $query -> bindParam(4, $message);
 
 // Assign data from form to local variables
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$email_address = $_POST['email_address'];
+$first_name = $_POST['f_name'];
+$last_name = $_POST['l_name'];
+$email_address = $_POST['email'];
 $message = $_POST['message'];
 
 // Execute the query
