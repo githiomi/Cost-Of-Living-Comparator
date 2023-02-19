@@ -52,6 +52,7 @@ a {
     padding: 0 1rem;
     font-weight: bold;
     letter-spacing: .2rem;
+    text-align: center;
 }
 
 /* Index Page Start */
@@ -116,6 +117,7 @@ video {
 }
 
 .toggler i {
+    cursor: pointer;
     color: var(--money-green);
     font-size: 28px;
     padding: 5px;
@@ -254,8 +256,12 @@ video {
     transition: all .3s ease-in-out;
 }
 
+.bibliography{
+    width: 100%;
+}
+
 .bibliography .bioText {
-    padding: 1rem;
+    padding: 2rem;
     font-size: 18px;
 }
 
@@ -408,6 +414,11 @@ textarea {
         width: 330px;
         border-radius: 10px;
     }
+
+    .bibliography .bioText{
+        text-align: center;
+        padding: 2rem 1rem;
+    }
 }
 
 /* Medium Screens */
@@ -426,6 +437,11 @@ textarea {
 
     .subHeader {
         font-size: 22px;
+    }
+
+    /* About Page */
+    .bibliography .bioText{
+        padding: 2rem .5rem;
     }
 
     /* Contact Page */
@@ -509,10 +525,18 @@ textarea {
         font-size: 18px;
     }
 
+    /* About Page */
+    .bibliography .bioText{
+        font-size: 17px;
+    }
+
 }
 
 /* Small Screen */
 @media all and (max-width: 574px) {
+    .sectionHeader{
+        letter-spacing: 0.1rem;
+    }
 
     /* Index Page */
     .pageTitle h1,
