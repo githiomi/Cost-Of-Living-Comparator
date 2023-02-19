@@ -189,9 +189,9 @@ video {
 }
 
 .dropdown button {
-    font-size: 17px;
+    font-size: 15px;
     width: 70%;
-    padding: 15px 0;
+    padding: 1rem;
     border: 2px solid var(--white);
     border-radius: 30px;
     color: var(--white-text-color);
@@ -199,10 +199,10 @@ video {
 }
 
 .dropdown button:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
     color: var(--white-text-color);
     box-shadow: 1px 1px 5px white;
-    transition: all .4s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 .dropdown ul {
@@ -520,7 +520,7 @@ textarea {
     }
 
     .dropdown button {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .pageBtn {
@@ -565,7 +565,7 @@ textarea {
     }
 
     .dropdown button {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .searchTitle {
