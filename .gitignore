@@ -1,1 +1,4 @@
 *.env
+
+# To hide index.js with RapidApi Keys
+JS/factapi.js
