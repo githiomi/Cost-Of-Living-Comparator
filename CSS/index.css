@@ -246,7 +246,7 @@ video {
 }
 
 #about .image img{
-    height: calc(100vh - 150px);
+    height: 100%;
     width: 480px;
     border-radius: 0 200px 0 0;
 }
