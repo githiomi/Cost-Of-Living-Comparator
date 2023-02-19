@@ -44,13 +44,15 @@ You will need to have the following installed on your system:
 
 * Minimum 4GB of RAM
 * Browser (For example: Chrome/Safari/Firefox)
+* XAMPP
 
 ## Setup Instructions
 
 * Git clone [THIS](https://github.com/githiomi/Cost-Of-Living-Comparator.git) repository into your terminal.  
 * Open the folder in your favourite editor (for example Visual Studio Code)
-* Install the live server extension on your version of Visual Studio Code
-* Open website using the live server extension
+* Ensure that the Apache and MySQl servers are running on XAMPP
+* Navigate to the directory containing the cloned repository and open it using "localhost"
+* Open and enjoy the website
 
 ## Support and contact details
 
