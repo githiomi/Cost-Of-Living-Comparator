@@ -207,11 +207,18 @@ video {
 
 .dropdown ul {
     width: 70%;
+    height: 300px;
+    overflow-y: scroll;
     border-radius: 15px;
 }
 
-.dropdown ul li a {
-    color: var(--money-green);
+.dropdown-item{
+    padding: .5rem 1rem;
+}
+
+.dropdown-item:hover{
+    transform: translateY(-2px);
+    transition: all .3s ease-in-out;
 }
 
 .compareText {
