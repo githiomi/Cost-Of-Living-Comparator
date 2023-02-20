@@ -236,6 +236,15 @@ video {
 
 /* Index Page End */
 
+/* Result Page Start */
+p > span{
+    color: var(--money-green);
+    font-size: 20px;
+    padding: 0 1rem;
+    font-weight: bold;
+}
+/* Result Page End */
+
 /* About Page Start */
 #about .container {
     width: 100%;
