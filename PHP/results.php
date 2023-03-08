@@ -17,7 +17,7 @@ try {
     $connection->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // If successful
-    echo "<h1 style='color:green; text-transform:uppercase;'>Connection established and reults from the 'Messages' table retrieved.</h1>";
+    echo "<h1 style='color:green; text-transform:uppercase;'>Connection established and results from the 'Messages' table retrieved.</h1>";
     echo "<br/> <br/>";
 } catch (PDOException $ex) {
 

@@ -1,5 +1,4 @@
 keys.env
 
 # To hide index.js with RapidApi Keys
-JS/api.js
-JS/resultsapi.js
+JS/config.js

@@ -49,7 +49,7 @@ a {
 .sectionHeader{
     text-transform: uppercase;
     color: var(--money-green);
-    padding: 0 1rem;
+    padding: 2rem 1rem;
     font-weight: bold;
     letter-spacing: .2rem;
     text-align: center;
@@ -418,11 +418,9 @@ textarea {
     box-shadow: 2px 2px 8px var(--money-green);
     transition: all .3s ease-in-out;
 }
-
 /* Contact Page End */
 
 /* Responsiveness  */
-
 /* Large Screens */
 @media all and (max-width: 1092px) {
     #about .container {
@@ -550,6 +548,13 @@ textarea {
         font-size: 17px;
     }
 
+    /* Contact Page */
+    .submitBtn{
+        margin: 2rem 0;
+        padding: 5px 15px;
+        font-size: 16px;
+    }
+
 }
 
 /* Small Screen */
@@ -607,8 +612,6 @@ textarea {
 
     .submitBtn {
         margin-top: 10px;
-        padding: 5px 15px;
-        font-size: 16px;
     }
 }
 

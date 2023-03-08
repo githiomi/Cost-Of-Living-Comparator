@@ -1,6 +1,18 @@
+// For the type writer animation
+var type = new Typed(".typewriter", {
+    strings: ["<span class='dollar'>_.</span>comparator<span class='dollar'>_.</span>"],
+    typeSpeed: 110,
+    backSpeed: 100,
+    loop: true
+});
+
 // To get country data from the API
 const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
+
+// const rapidApiKey = "c31d30f36dmshfb00c2a42e8204fp1b261fjsnf77ffe5266e4";
+const rapidApiKey = apiKeysConfig.countryFactsApiKey;
+const XRapidApiHost = apiKeysConfig.countryFactsApiHost;
 
 const settings = {
     "async": true,
