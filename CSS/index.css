@@ -307,6 +307,25 @@ video {
     letter-spacing: .01rem;
 }
 
+/* Accordions */
+.accordion-item{
+    margin: 1rem;
+}
+
+.accordion-button{
+    color: var(--money-green);
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: .1rem;
+}
+
+.accordion-icon{
+    font-size: 2.5rem;
+    color: var(--money-green);
+    padding: 0 1.5rem;
+}
+
 p > span{
     color: var(--money-green);
     font-size: 20px;

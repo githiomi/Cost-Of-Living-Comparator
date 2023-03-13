@@ -70,7 +70,7 @@
 
                     <div class="townTitle text-center">
                         <h4>Base Town:</h4>
-                        <div class="baseName">
+                        <div id="bTData" class="baseName">
                             Port Louis, Mauritius
                         </div>
                     </div>
@@ -99,7 +99,7 @@
 
                     <div class="townTitle text-center">
                         <h4>Compare Town:</h4>
-                        <div class="compareName">
+                        <div id="cTData" class="compareName">
                             Port Louis, Mauritius
                         </div>
                     </div>
@@ -126,6 +126,40 @@
 
             </div>
 
+            <div class="comparison text-center" style="font-style: italic;">The cost of living in Mauritius is 10% more
+                expensive than in Kenya</div>
+
+            <!-- Filter Dropdown START -->
+            <div id="filter">
+                <div class="dropdown">
+
+                    <button id="filterSelect" class="btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Filter By:
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li>
+                            <h6 class="dropdown-header">Select any filter below:</h6>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <div class="dropdowns">
+                            <ul>
+                                <li>Education</li>
+                                <li>Transport</li>
+                                <li>Housing</li>
+                                <li>Utilities</li>
+                            </ul>
+                        </div>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- Filter Dropdown END -->
         </div>
     </section>
     <!-- Country Details Section END -->
@@ -133,8 +167,58 @@
     <!-- Result content Start -->
     <section id="results">
         <div class="container">
-            <p id="bTData"></p>
-            <p id="cTData"></p>
+            <!-- <p id="bTData"></p>
+            <p id="cTData"></p> -->
+
+            <!-- Accordion Section START -->
+            <div class="detailsAccordion" id="comparisonAccordion">
+
+                <div class="accordion-item text-dark">
+
+                    <h2 class="accordion-header" id="education">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseEducation" aria-expanded="true" aria-controls="collapseEducation">
+                            <i class="fa-solid fa-book accordion-icon"></i> Education
+                        </button>
+                    </h2>
+                    <div id="collapseEducation" class="accordion-collapse collapse show" aria-labelledby="education"
+                        data-bs-parent="#comparisonAccordion">
+                        <div class="accordion-body">
+                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                            collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes control the overall appearance, as well as the showing and hiding via CSS
+                            transitions. You can modify any of this with custom CSS or overriding our default variables.
+                            It's also worth noting that just about any HTML can go within the
+                            <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="accordion-item text-dark">
+
+                    <h2 class="accordion-header" id="transport">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTransport" aria-expanded="true" aria-controls="collapseTransport">
+                            <i class="fa-solid fa-van-shuttle accordion-icon"></i></i> Transport
+                        </button>
+                    </h2>
+                    <div id="collapseTransport" class="accordion-collapse collapse" aria-labelledby="transport"
+                        data-bs-parent="#comparisonAccordion">
+                        <div class="accordion-body">
+                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                            collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes control the overall appearance, as well as the showing and hiding via CSS
+                            transitions. You can modify any of this with custom CSS or overriding our default variables.
+                            It's also worth noting that just about any HTML can go within the
+                            <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Accordion Section END -->
 
             <h1 class="sectionHeader">Education</h1>
             <p>Country 1: <span class="c1Edu"></span></p>
