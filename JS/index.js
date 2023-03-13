@@ -109,13 +109,24 @@ $(document).ready(function () {
 
         // Get base details
         const base = document.getElementById("baseTownSelected").textContent;
-        baseCapital = base.split(',')[1];
         baseCountry = base.split(',')[0];
+        baseCapital = base.split(',')[1];
 
         // Get compare details
         const compare = document.getElementById("compareTownSelected").textContent;
-        compareCapital = compare.split(',')[1];
         compareCountry = compare.split(',')[0];
+        compareCapital = compare.split(',')[1];
+
+        // Error handling
+        if (baseCapital == undefined){
+            alert('Please select a base country and its capital 🤖!');
+            return;
+        }
+
+        if (compareCapital == undefined){
+            alert('Please select a compare country and its capital 🤖!');
+            return;
+        }
 
         window.localStorage.setItem(key, JSON.stringify({
             baseCapital: baseCapital,
