@@ -244,6 +244,69 @@ video {
 /* Index Page End */
 
 /* Result Page Start */
+.details-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5rem;
+}
+
+.baseTown, .compareTown{
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+.townTitle{
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.townTitle h4{
+    font-size: 1.8rem;
+    padding: 1.5rem;
+}
+
+.baseName, .compareName{
+    width: 70%;
+    padding: 1.2rem 0;
+    margin: 0 auto;
+    border: 1px solid var(--white);
+    border-radius: 15px;
+}
+
+.compareTown .townTitle{
+    color: var(--money-green);
+}
+
+.compareName{
+    border: 1px solid var(--money-green);
+}
+
+.townDescription{
+    padding: 1rem .5rem;
+    border: 1px solid var(--white);
+    border-radius: 15px;
+    width: 75%;
+    margin: 2rem auto;
+}
+
+.baseTown .townDescription .detailTitle{
+    color: var(--money-green);
+}
+
+.compareTown .townDescription .detailContent{
+    color: var(--money-green);
+}
+
+.countryDetail{
+    padding: .1rem;
+}
+
+.detailTitle{
+    padding: 0 .3rem;
+    letter-spacing: .01rem;
+}
+
 p > span{
     color: var(--money-green);
     font-size: 20px;
