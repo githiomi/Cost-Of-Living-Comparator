@@ -11,7 +11,7 @@ const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/afric
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 
 // const rapidApiKey = "c31d30f36dmshfb00c2a42e8204fp1b261fjsnf77ffe5266e4";
-const rapidApiKey = apiKeysConfig.countryFactsApiKey;
+const rapidApiKey = apiKeysConfig.rapidApiKey;
 const XRapidApiHost = apiKeysConfig.countryFactsApiHost;
 
 const settings = {
@@ -39,7 +39,6 @@ $(document).ready(function () {
             newA = document.createElement("a");
             newA.classList.add("base-item");
             newA.classList.add("dropdown-item");
-            newA.href = "#page2";
 
             // Add content to the dropdown item
             current = response[i];
@@ -61,7 +60,6 @@ $(document).ready(function () {
             newA = document.createElement("a");
             newA.classList.add("compare-item");
             newA.classList.add("dropdown-item");
-            newA.href = "#page2";
 
             // Add content to the dropdown item
             current = response[i];
