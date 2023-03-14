@@ -16,6 +16,19 @@ console.log(`Compare Country: ${compareCountry}`);
 document.getElementById('bTData').innerHTML = baseCapital + ", " + baseCountry;
 document.getElementById('cTData').innerHTML = compareCapital + ", " + compareCountry;
 
+// Enter town names into accordion titles
+$('.accordionBaseTownName').each(() => {
+    // Not working
+    console.log("Ready ---" + baseCapital)
+    $(this).innerHTML = baseCapital;
+})
+
+$('.accordionCompareTownName').each(() => {
+    // Not working
+    console.log("Ready ---" + compareCapital)
+    $(this).innerHTML = compareCapital;
+})
+
 // API Config
 const rapidApiKey = apiKeysConfig.rapidApiKey;
 const rapidApiHost = apiKeysConfig.costOfLivingApiHost;
@@ -59,10 +72,11 @@ $(document).ready(function () {
     //     const c1Edu = baseCurr + ". " + baseResponse.prices[2].avg;
     //     const c1Tran = baseCurr + ". " + baseResponse.prices[44].avg;
     //     const c1Hou = baseCurr + ". " + baseResponse.prices[26].avg;
+    //     const c1Hou = baseCurr + ". " + baseResponse.prices[26].avg;
     //     const c1Uti = baseCurr + ". " + baseResponse.prices[48].avg;
 
     //     // Manipulate the DOM
-    //     document.querySelector('.c1Edu').innerHTML = c1Edu;
+    //     document.querySelector('.educationBaseTownCost1').innerHTML = c1Edu;
     //     document.querySelector('.c1Tran').innerHTML = c1Tran;
     //     document.querySelector('.c1Hou').innerHTML = c1Hou;
     //     document.querySelector('.c1Uti').innerHTML = c1Uti;
@@ -78,7 +92,7 @@ $(document).ready(function () {
     //     const c2Uti = compareCurr + ". " + compareResponse.prices[48].avg;
 
     //     // Manipulate the DOM
-    //     document.querySelector('.c2Edu').innerHTML = c2Edu;
+    //     document.querySelector('.educationCompareTownCost1').innerHTML = c2Edu;
     //     document.querySelector('.c2Tran').innerHTML = c2Tran;
     //     document.querySelector('.c2Hou').innerHTML = c2Hou;
     //     document.querySelector('.c2Uti').innerHTML = c2Uti;
