@@ -4,6 +4,6 @@ const menu = document.querySelector('.nav');
 
 toggler.addEventListener('click', () => {
     // When clicked, toggle menu
-    menu.classList.toggle('show');
+    menu.classList.toggle('nav-show');
     toggler.classList.toggle('fa-times');
 });

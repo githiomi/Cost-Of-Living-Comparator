@@ -7,12 +7,14 @@ var baseCountry = searchData.baseCountry;
 var compareCapital = searchData.compareCapital;
 var compareCountry = searchData.compareCountry;
 
+console.log(`Base Capital: ${baseCapital}`);
+console.log(`Base Country: ${baseCountry}`);
+console.log(`Compare Capital: ${compareCapital}`);
+console.log(`Compare Country: ${compareCountry}`);
+
 // Manipulate DOM with data from local storage
 document.getElementById('bTData').innerHTML = baseCapital + ", " + baseCountry;
 document.getElementById('cTData').innerHTML = compareCapital + ", " + compareCountry;
-
-// Second API call to get the country data
-// const costOfLivingCitiesUrl = "https://cost-of-living-and-prices.p.rapidapi.com/cities";
 
 // API Config
 const rapidApiKey = apiKeysConfig.rapidApiKey;
@@ -48,38 +50,38 @@ const compareSettings = {
 $(document).ready(function () {
 
     // Perform 2nd API call to call info from 1st base country then 2nd compare country
-    $.ajax(baseSettings).done(function (baseResponse) {
-        console.log(baseResponse);
+    // $.ajax(baseSettings).done(function (baseResponse) {
+    //     console.log(baseResponse);
 
-        if (baseResponse.prices[2].currency_code == undefined) return;
+    //     if (baseResponse.prices[2].currency_code == undefined) return;
 
-        const baseCurr = baseResponse.prices[2].currency_code;
-        const c1Edu = baseCurr + ". " + baseResponse.prices[2].avg;
-        const c1Tran = baseCurr + ". " + baseResponse.prices[44].avg;
-        const c1Hou = baseCurr + ". " + baseResponse.prices[26].avg;
-        const c1Uti = baseCurr + ". " + baseResponse.prices[48].avg;
+    //     const baseCurr = baseResponse.prices[2].currency_code;
+    //     const c1Edu = baseCurr + ". " + baseResponse.prices[2].avg;
+    //     const c1Tran = baseCurr + ". " + baseResponse.prices[44].avg;
+    //     const c1Hou = baseCurr + ". " + baseResponse.prices[26].avg;
+    //     const c1Uti = baseCurr + ". " + baseResponse.prices[48].avg;
 
-        // Manipulate the DOM
-        document.querySelector('.c1Edu').innerHTML = c1Edu;
-        document.querySelector('.c1Tran').innerHTML = c1Tran;
-        document.querySelector('.c1Hou').innerHTML = c1Hou;
-        document.querySelector('.c1Uti').innerHTML = c1Uti;
+    //     // Manipulate the DOM
+    //     document.querySelector('.c1Edu').innerHTML = c1Edu;
+    //     document.querySelector('.c1Tran').innerHTML = c1Tran;
+    //     document.querySelector('.c1Hou').innerHTML = c1Hou;
+    //     document.querySelector('.c1Uti').innerHTML = c1Uti;
 
-    });
+    // });
 
-    $.ajax(compareSettings).done(function (compareResponse) {
-        console.log(compareResponse);
-        const compareCurr = compareResponse.prices[2].currency_code;
-        const c2Edu = compareCurr + ". " + compareResponse.prices[2].avg;;
-        const c2Tran = compareCurr + ". " + compareResponse.prices[44].avg;
-        const c2Hou = compareCurr + ". " + compareResponse.prices[26].avg;
-        const c2Uti = compareCurr + ". " + compareResponse.prices[48].avg;
+    // $.ajax(compareSettings).done(function (compareResponse) {
+    //     console.log(compareResponse);
+    //     const compareCurr = compareResponse.prices[2].currency_code;
+    //     const c2Edu = compareCurr + ". " + compareResponse.prices[2].avg;;
+    //     const c2Tran = compareCurr + ". " + compareResponse.prices[44].avg;
+    //     const c2Hou = compareCurr + ". " + compareResponse.prices[26].avg;
+    //     const c2Uti = compareCurr + ". " + compareResponse.prices[48].avg;
 
-        // Manipulate the DOM
-        document.querySelector('.c2Edu').innerHTML = c2Edu;
-        document.querySelector('.c2Tran').innerHTML = c2Tran;
-        document.querySelector('.c2Hou').innerHTML = c2Hou;
-        document.querySelector('.c2Uti').innerHTML = c2Uti;
-    });
+    //     // Manipulate the DOM
+    //     document.querySelector('.c2Edu').innerHTML = c2Edu;
+    //     document.querySelector('.c2Tran').innerHTML = c2Tran;
+    //     document.querySelector('.c2Hou').innerHTML = c2Hou;
+    //     document.querySelector('.c2Uti').innerHTML = c2Uti;
+    // });
 
 });

@@ -283,11 +283,11 @@ video {
 }
 
 .townDescription{
-    padding: 1rem .5rem;
+    padding: 1rem 0;
     border: 1px solid var(--white);
     border-radius: 15px;
     width: 75%;
-    margin: 2rem auto;
+    margin: 1rem auto;
 }
 
 .baseTown .townDescription .detailTitle{
@@ -298,12 +298,11 @@ video {
     color: var(--money-green);
 }
 
-.countryDetail{
-    padding: .1rem;
+.countryDetails{
+    padding: 0 1rem;
 }
 
 .detailTitle{
-    padding: 0 .3rem;
     letter-spacing: .01rem;
 }
 
@@ -503,6 +502,13 @@ textarea {
 /* Contact Page End */
 
 /* Responsiveness  */
+/* Very Large Screens */
+@media all and (max-width: 1200px){
+    .townDescription{
+        width: 100%;
+    }
+}
+
 /* Large Screens */
 @media all and (max-width: 1092px) {
     #about .container {
@@ -539,6 +545,15 @@ textarea {
         font-size: 22px;
     }
 
+    /* Results Page */
+    .details-content{
+        gap: 1rem;
+    }
+
+    .townTitle h4{
+        font-size: 1.5rem;
+    }
+
     /* About Page */
     .bibliography .bioText{
         padding: 2rem .5rem;
@@ -555,7 +570,7 @@ textarea {
 }
 
 /* Mobile view */
-@media all and (max-width: 764px) {
+@media all and (max-width: 767px) {
     .navigation {
         position: relative;
         flex-direction: column;
@@ -573,7 +588,7 @@ textarea {
         display: none;
     }
 
-    .show {
+    .nav-show {
         width: 100%;
         margin: 1rem auto;
         background-color: var(--dark-grey);
@@ -623,6 +638,20 @@ textarea {
         margin-top: 70px;
         padding: 8px 13px;
         font-size: 18px;
+    }
+
+    /* Results Page */
+    .details-content{
+        flex-direction: column;
+    }
+
+    .baseTown, .compareTown{
+        width: 100%;
+        padding: .5rem 1rem;
+    }    
+
+    .townTitle h4{
+        padding: 1rem;
     }
 
     /* About Page */
