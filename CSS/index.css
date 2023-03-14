@@ -311,15 +311,13 @@ video {
 }
 
 /* Filter */
-#filter {
+#filter .dropdown {
+    width: 30%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 3rem;
-}
-
-#filter .dropdown {
-    width: 30%;
 }
 
 #filter .dropdown button {
@@ -664,6 +662,11 @@ textarea {
         font-size: 1.5rem;
     }
 
+    /* Filter */
+    #filter .dropdown{
+        width: 50%;
+    }
+
     /* About Page */
     .bibliography .bioText {
         padding: 2rem .5rem;
@@ -765,6 +768,29 @@ textarea {
         padding: 1rem;
     }
 
+    /* Filter */
+    #filter .dropdown{
+        width: 75%;
+    }
+
+    /* Accordion */
+    .accordion-button{
+        font-size: 1.5rem;
+    }
+
+    .accordionPercentage{
+        display: none;
+    }
+
+    .comparisonItem{
+        font-size: 1rem;
+    }
+
+    .comparison{
+        font-size: 1rem;
+        letter-spacing: .05rem;
+    }
+
     /* About Page */
     .bibliography .bioText {
         font-size: 17px;
@@ -834,6 +860,27 @@ textarea {
 
     .submitBtn {
         margin-top: 10px;
+    }
+}
+
+@media all and (max-width: 442px){
+    /* Results Page */
+    /* Accordion */
+    .accordion-button{
+        font-size: 1.3rem;
+    }
+
+    .accordionPercentage{
+        display: none;
+    }
+
+    .comparisonItem{
+        font-size: .8rem;
+    }
+
+    .comparison{
+        font-size: .8rem;
+        letter-spacing: .05rem;
     }
 }
 
