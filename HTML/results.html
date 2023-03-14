@@ -125,9 +125,9 @@
                 </div>
 
             </div>
-
+            <!-- 
             <div class="comparison text-center" style="font-style: italic;">The cost of living in Mauritius is 10% more
-                expensive than in Kenya</div>
+                expensive than in Kenya</div> -->
 
             <!-- Filter Dropdown START -->
             <div id="filter">
@@ -135,7 +135,7 @@
 
                     <button id="filterSelect" class="btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Filter By:
+                        Filter Results By:
                     </button>
 
                     <ul class="dropdown-menu dropdown-menu-dark">
@@ -149,10 +149,10 @@
 
                         <div class="dropdowns">
                             <ul>
-                                <li>Education</li>
-                                <li>Transport</li>
-                                <li>Housing</li>
-                                <li>Utilities</li>
+                                <li class="dropdown-item">Education</li>
+                                <li class="dropdown-item">Transport</li>
+                                <li class="dropdown-item">Housing</li>
+                                <li class="dropdown-item">Utilities</li>
                             </ul>
                         </div>
                     </ul>
@@ -173,45 +173,193 @@
             <!-- Accordion Section START -->
             <div class="detailsAccordion" id="comparisonAccordion">
 
-                <div class="accordion-item text-dark">
+                <div class="accordion-item">
 
                     <h2 class="accordion-header" id="education">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseEducation" aria-expanded="true" aria-controls="collapseEducation">
-                            <i class="fa-solid fa-book accordion-icon"></i> Education
+                            <div class="accordionHeader">
+                                <div class="accordionName">
+                                    <i class="fa-solid fa-book accordion-icon"></i> Education
+                                </div>
+                                <div class="accordionPercentage">
+                                    23% cheaper
+                                </div>
+                            </div>
                         </button>
                     </h2>
                     <div id="collapseEducation" class="accordion-collapse collapse show" aria-labelledby="education"
                         data-bs-parent="#comparisonAccordion">
                         <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default variables.
-                            It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
+                            <div class="accordionContent">
+                                <div class="countryGrid">
+                                    <div class="emptyTitle"></div>
+                                    <div class="baseCapital accordionBaseTownName">Port Louis</div>
+                                    <div class="compareCapital accordionCompareTownName">Nairobi</div>
+                                </div>
+
+                                <hr>
+
+                                <div class="countryGrid">
+                                    <div class="comparisonItem">Private School Per Annum</div>
+                                    <div class="comparison accordionBaseTownCost1"> <span
+                                            class="baseCurrency">Rs.</span> 4,456</div>
+                                    <div class="comparison accordionCompareTownCost1"> <span
+                                            class="compareCurrency">Ksh.</span> 678</div>
+                                </div>
+
+                                <div class="countryGrid">
+                                    <div class="comparisonItem">Public School Per Annum</div>
+                                    <div class="comparison accordionBaseTownCost2"> <span
+                                            class="baseCurrency">Rs.</span> 4,456</div>
+                                    <div class="comparison accordionBaseTownCost2"> <span
+                                            class="compareCurrency">Ksh.</span> 678</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="accordion-item text-dark">
+                <div class="accordion-item">
 
                     <h2 class="accordion-header" id="transport">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTransport" aria-expanded="true" aria-controls="collapseTransport">
-                            <i class="fa-solid fa-van-shuttle accordion-icon"></i></i> Transport
+                            data-bs-target="#collapseTransport" aria-expanded="false" aria-controls="collapseTransport">
+                            <div class="accordionHeader">
+                                <div class="accordionName">
+                                    <i class="fa-solid fa-bus accordion-icon"></i> Transport
+                                </div>
+                                <div class="accordionPercentage">
+                                    7% cheaper
+                                </div>
+                            </div>
                         </button>
                     </h2>
                     <div id="collapseTransport" class="accordion-collapse collapse" aria-labelledby="transport"
                         data-bs-parent="#comparisonAccordion">
                         <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default variables.
-                            It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
+                            <div class="accordionContent">
+                                <div class="countryGrid">
+                                    <div class="emptyTitle"></div>
+                                    <div class="baseCapital accordionBaseTownName">Port Louis</div>
+                                    <div class="compareCapital accordionCompareTownName">Nairobi</div>
+                                </div>
+
+                                <hr>
+
+                                <div class="countryGrid">
+                                    <div class="comparisonItem">Private School Per Annum</div>
+                                    <div class="comparison accordionBaseTownCost1"> <span
+                                            class="baseCurrency">Rs.</span> 4,456</div>
+                                    <div class="comparison accordionCompareTownCost1"> <span
+                                            class="compareCurrency">Ksh.</span> 678</div>
+                                </div>
+
+                                <div class="countryGrid">
+                                    <div class="comparisonItem">Public School Per Annum</div>
+                                    <div class="comparison accordionBaseTownCost2"> <span
+                                            class="baseCurrency">Rs.</span> 4,456</div>
+                                    <div class="comparison accordionBaseTownCost2"> <span
+                                            class="compareCurrency">Ksh.</span> 678</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header" id="housing">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseHousing" aria-expanded="false" aria-controls="collapseHousing">
+                            <div class="accordionHeader">
+                                <div class="accordionName">
+                                    <i class="fa-solid fa-house accordion-icon"></i> Housing
+                                </div>
+                                <div class="accordionPercentage">
+                                    49% cheaper
+                                </div>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="collapseHousing" class="accordion-collapse collapse" aria-labelledby="housing"
+                        data-bs-parent="#comparisonAccordion">
+                        <div class="accordion-body">
+                            <div class="accordionContent">
+                                <div class="countryGrid">
+                                    <div class="emptyTitle"></div>
+                                    <div class="baseCapital accordionBaseTownName">Port Louis</div>
+                                    <div class="compareCapital accordionCompareTownName">Nairobi</div>
+                                </div>
+
+                                <hr>
+
+                                <div class="countryGrid">
+                                    <div class="comparisonItem">Private School Per Annum</div>
+                                    <div class="comparison accordionBaseTownCost1"> <span
+                                            class="baseCurrency">Rs.</span> 4,456</div>
+                                    <div class="comparison accordionCompareTownCost1"> <span
+                                            class="compareCurrency">Ksh.</span> 678</div>
+                                </div>
+
+                                <div class="countryGrid">
+                                    <div class="comparisonItem">Public School Per Annum</div>
+                                    <div class="comparison accordionBaseTownCost2"> <span
+                                            class="baseCurrency">Rs.</span> 4,456</div>
+                                    <div class="comparison accordionBaseTownCost2"> <span
+                                            class="compareCurrency">Ksh.</span> 678</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header" id="utilities">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                            <div class="accordionHeader">
+                                <div class="accordionName">
+                                    <i class="fa-solid fa-poo-storm accordion-icon"></i> Utilities
+                                </div>
+                                <div class="accordionPercentage">
+                                    11% cheaper
+                                </div>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="collapseUtilities" class="accordion-collapse collapse" aria-labelledby="utilities"
+                        data-bs-parent="#comparisonAccordion">
+                        <div class="accordion-body">
+                            <div class="accordionContent">
+                                <div class="countryGrid">
+                                    <div class="emptyTitle"></div>
+                                    <div class="baseCapital accordionBaseTownName">Port Louis</div>
+                                    <div class="compareCapital accordionCompareTownName">Nairobi</div>
+                                </div>
+
+                                <hr>
+
+                                <div class="countryGrid">
+                                    <div class="comparisonItem">Private School Per Annum</div>
+                                    <div class="comparison accordionBaseTownCost1"> <span
+                                            class="baseCurrency">Rs.</span> 4,456</div>
+                                    <div class="comparison accordionCompareTownCost1"> <span
+                                            class="compareCurrency">Ksh.</span> 678</div>
+                                </div>
+
+                                <div class="countryGrid">
+                                    <div class="comparisonItem">Public School Per Annum</div>
+                                    <div class="comparison accordionBaseTownCost2"> <span
+                                            class="baseCurrency">Rs.</span> 4,456</div>
+                                    <div class="comparison accordionBaseTownCost2"> <span
+                                            class="compareCurrency">Ksh.</span> 678</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

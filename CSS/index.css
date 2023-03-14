@@ -46,7 +46,7 @@ a {
     font-weight: bold;
 }
 
-.sectionHeader{
+.sectionHeader {
     text-transform: uppercase;
     color: var(--money-green);
     padding: 2rem 1rem;
@@ -101,7 +101,7 @@ video {
     justify-content: space-between;
 }
 
-.nav ul li:hover{
+.nav ul li:hover {
     transform: translateY(-2px);
     transition: all 0.5s ease-in-out;
 }
@@ -212,11 +212,13 @@ video {
     border-radius: 15px;
 }
 
-.dropdown-item{
+.dropdown-item {
+    width: 100%;
+    cursor: pointer;
     padding: .5rem 1rem;
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
     transform: translateY(-2px);
     transition: all .3s ease-in-out;
 }
@@ -244,93 +246,197 @@ video {
 /* Index Page End */
 
 /* Result Page Start */
-.details-content{
+.details-content {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     gap: 5rem;
 }
 
-.baseTown, .compareTown{
+.baseTown,
+.compareTown {
     width: 100%;
     padding: 1rem 2rem;
 }
 
-.townTitle{
+.townTitle {
     text-transform: uppercase;
     cursor: pointer;
 }
 
-.townTitle h4{
+.townTitle h4 {
     font-size: 1.8rem;
     padding: 1.5rem;
 }
 
-.baseName, .compareName{
+.baseName,
+.compareName {
     width: 70%;
     padding: 1.2rem 0;
     margin: 0 auto;
     border: 1px solid var(--white);
-    border-radius: 15px;
+    border-radius: 8px;
 }
 
-.compareTown .townTitle{
+.compareTown .townTitle {
     color: var(--money-green);
 }
 
-.compareName{
+.compareName {
     border: 1px solid var(--money-green);
 }
 
-.townDescription{
+.townDescription {
     padding: 1rem 0;
     border: 1px solid var(--white);
-    border-radius: 15px;
+    border-radius: 8px;
     width: 75%;
     margin: 1rem auto;
 }
 
-.baseTown .townDescription .detailTitle{
+.baseTown .townDescription .detailTitle {
     color: var(--money-green);
 }
 
-.compareTown .townDescription .detailContent{
+.compareTown .townDescription .detailContent {
     color: var(--money-green);
 }
 
-.countryDetails{
+.countryDetails {
     padding: 0 1rem;
 }
 
-.detailTitle{
+.detailTitle {
     letter-spacing: .01rem;
 }
 
-/* Accordions */
-.accordion-item{
-    margin: 1rem;
+/* Filter */
+#filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
 }
 
-.accordion-button{
-    color: var(--money-green);
+#filter .dropdown {
+    width: 30%;
+}
+
+#filter .dropdown button {
+    padding: 1rem 2rem;
+}
+
+#filter .dropdown ul {
+    border: none;
+    border-radius: 0;
+    overflow-y: hidden;
+    height: auto;
+}
+
+.dropdowns ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Accordions */
+#comparisonAccordion {
+    padding: 3rem 0;
+}
+
+.accordion-item {
+    border: 1px solid var(--money-green);
+    transition: box-shadow 0.4s ease-in-out;
+}
+
+.accordion-item:hover {
+    box-shadow: 2px 2px 10px var(--money-green);
+}
+
+.accordion-item,
+.accordion-item button {
+    width: 100%;
+    margin: 1rem;
+    background-color: var(--dark-grey);
+    border-radius: 8px;
+    transition: all .5s ease-in-out;
+}
+
+.accordionHeader,
+.accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.accordion-button {
+    color: var(--money-green) !important;
     text-transform: uppercase;
     font-size: 1.8rem;
     font-weight: bold;
     letter-spacing: .1rem;
+    background-color: var(--main-background-color) !important;
+    outline: none;
+    border: none;
 }
 
-.accordion-icon{
+.accordion-button.collapsed {
+    color: var(--white-text-color) !important;
+    background-color: var(--dark-grey) !important;
+}
+
+.accordionName {
+    display: flex;
+    align-items: center;
+}
+
+.accordionPercentage {
+    font-size: 1.2rem;
+    padding-right: 1rem;
+}
+
+.accordion-icon {
     font-size: 2.5rem;
     color: var(--money-green);
     padding: 0 1.5rem;
 }
 
-p > span{
+.accordionContent {
+    color: var(--white-text-color);
+}
+
+.countryGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    text-align: center;
+    padding: .3rem 1rem;
+}
+
+.baseCapital,
+.compareCapital {
+    font-style: italic;
+}
+
+.comparisonItem {
+    text-align: start;
+    font-size: 1.2rem;
+}
+
+.comparison {
+    font-size: 1.1rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+}
+
+p>span {
     color: var(--money-green);
     font-size: 20px;
     padding: 0 1rem;
     font-weight: bold;
 }
+
 /* Result Page End */
 
 /* About Page Start */
@@ -342,18 +448,18 @@ p > span{
     gap: 2rem;
 }
 
-#about .image img{
+#about .image img {
     height: 100%;
     width: 480px;
     border-radius: 0 200px 0 0;
 }
 
-#about .image img:hover{
+#about .image img:hover {
     transform: translateY(-3px);
     transition: all .3s ease-in-out;
 }
 
-.bibliography{
+.bibliography {
     width: 100%;
 }
 
@@ -367,7 +473,7 @@ p > span{
     transition: all 0.5s ease-in-out;
 }
 
-.socials ul{
+.socials ul {
     width: 100%;
     padding: 0 10rem;
     display: flex;
@@ -375,13 +481,13 @@ p > span{
     justify-content: center;
 }
 
-.socials .fa-brands{
+.socials .fa-brands {
     font-size: 35px;
     color: var(--white);
     margin: 1.5rem;
 }
 
-.socials .fa-brands:hover{
+.socials .fa-brands:hover {
     transform: translateY(-5px);
     color: var(--money-green);
     transition: all 0.5s ease-in-out;
@@ -407,7 +513,8 @@ p > span{
     text-transform: uppercase;
 }
 
-.connectBtn, .viewMessageBtn {
+.connectBtn,
+.viewMessageBtn {
     display: block;
     margin: 1rem auto;
     font-size: 15px;
@@ -419,7 +526,8 @@ p > span{
     color: var(--white-text-color);
 }
 
-.connectBtn a, .viewMessageBtn a{
+.connectBtn a,
+.viewMessageBtn a {
     color: var(--white-text-color);
 }
 
@@ -434,7 +542,8 @@ p > span{
     padding: 0.3rem 0.5rem;
 }
 
-.connectBtn:hover, .viewMessageBtn:hover {
+.connectBtn:hover,
+.viewMessageBtn:hover {
     transform: scale(0.95);
     transition: all 0.5s ease-in-out;
 }
@@ -499,12 +608,13 @@ textarea {
     box-shadow: 2px 2px 8px var(--money-green);
     transition: all .3s ease-in-out;
 }
+
 /* Contact Page End */
 
 /* Responsiveness  */
 /* Very Large Screens */
-@media all and (max-width: 1200px){
-    .townDescription{
+@media all and (max-width: 1200px) {
+    .townDescription {
         width: 100%;
     }
 }
@@ -515,13 +625,13 @@ textarea {
         flex-direction: column;
     }
 
-    #about .image img{
+    #about .image img {
         height: 500px;
         width: 330px;
         border-radius: 10px;
     }
 
-    .bibliography .bioText{
+    .bibliography .bioText {
         text-align: center;
         padding: 2rem 1rem;
     }
@@ -546,16 +656,16 @@ textarea {
     }
 
     /* Results Page */
-    .details-content{
+    .details-content {
         gap: 1rem;
     }
 
-    .townTitle h4{
+    .townTitle h4 {
         font-size: 1.5rem;
     }
 
     /* About Page */
-    .bibliography .bioText{
+    .bibliography .bioText {
         padding: 2rem .5rem;
     }
 
@@ -641,26 +751,27 @@ textarea {
     }
 
     /* Results Page */
-    .details-content{
+    .details-content {
         flex-direction: column;
     }
 
-    .baseTown, .compareTown{
+    .baseTown,
+    .compareTown {
         width: 100%;
         padding: .5rem 1rem;
-    }    
+    }
 
-    .townTitle h4{
+    .townTitle h4 {
         padding: 1rem;
     }
 
     /* About Page */
-    .bibliography .bioText{
+    .bibliography .bioText {
         font-size: 17px;
     }
 
     /* Contact Page */
-    .submitBtn{
+    .submitBtn {
         margin: 2rem 0;
         padding: 5px 15px;
         font-size: 16px;
@@ -670,7 +781,7 @@ textarea {
 
 /* Small Screen */
 @media all and (max-width: 574px) {
-    .sectionHeader{
+    .sectionHeader {
         letter-spacing: 0.1rem;
     }
 
@@ -727,6 +838,7 @@ textarea {
 }
 
 @media all and (max-width: 350px) {
+
     /* Index Page */
     .pageTitle h1,
     .typewriter {
