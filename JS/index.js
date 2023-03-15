@@ -28,7 +28,7 @@ const settings = {
 $(document).ready(function () {
     $.ajax(settings).done(function (response) {
 
-        console.log(response);
+        console.log(response); // log response to confirm in console
 
         // Get dropdown divs
         const baseDropDown = document.querySelectorAll(".dropdowns")[0];

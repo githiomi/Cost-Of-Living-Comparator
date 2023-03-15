@@ -17,19 +17,39 @@ document.getElementById('bTData').innerHTML = baseCapital + ", " + baseCountry;
 document.getElementById('cTData').innerHTML = compareCapital + ", " + compareCountry;
 
 // Enter town names into accordion titles
-$('.accordionBaseTownName').each(() => {
+$('.accordionBaseTownName').each( function () {
     // Not working
     console.log("Ready ---" + baseCapital)
     $(this).innerHTML = baseCapital;
 })
 
-$('.accordionCompareTownName').each(() => {
+$('.accordionCompareTownName').each(function () {
     // Not working
     console.log("Ready ---" + compareCapital)
     $(this).innerHTML = compareCapital;
 })
 
-// API Config
+//1st API Call Config
+// To get country data from the API
+const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
+const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
+
+const factsRapidApiKey = apiKeysConfig.rapidApiKey;
+const factsRapidApiHost = apiKeysConfig.countryFactsApiHost;
+
+const factsSettings = {
+    "async": true,
+    "crossDomain": true,
+    "url": countryFactsUrlAfrica,
+    "method": "GET",
+    "headers": {
+        "X-RapidAPI-Key": factsRapidApiKey,
+        "X-RapidAPI-Host": factsRapidApiHost
+    }
+};
+// 1st API Call Config End
+
+// 2nd API Call Config
 const rapidApiKey = apiKeysConfig.rapidApiKey;
 const rapidApiHost = apiKeysConfig.costOfLivingApiHost;
 
@@ -58,9 +78,53 @@ const compareSettings = {
         "X-RapidAPI-Host": rapidApiHost
     }
 };
+// 2nd API Call Config End
 
-// Using JQuey to get persisted data from local storage
+// JQuery Functionality when page is loaded
 $(document).ready(function () {
+
+    // Perform 1st API Call to Facts API
+    $.ajax(factsSettings).done( (response) => {
+        console.log(response);
+
+        // To get any country details
+        function getCountry(countryName){
+            let returnCountry;
+
+            for (let c = 0; c < response.length; c++){
+                if (countryName === response[c].name.common){
+                    returnCountry = response[c];
+                }
+            }
+            return returnCountry;
+        }
+
+        // To get the baseCountry
+        baseCountryDetails = getCountry(baseCountry);
+        compareCountryDetails = getCountry(compareCountry);
+
+        // Manipulate DOM to contain country details
+        // Base Country
+        document.getElementById('c1Name').innerHTML = baseCountryDetails.name.common;
+        document.getElementById('c1Capital').innerHTML = baseCountryDetails.capital[0];
+        document.getElementById('c1Region').innerHTML = baseCountryDetails.subregion;
+        document.getElementById('c1Population').innerHTML = baseCountryDetails.population;
+        document.getElementById('c1Currency').innerHTML = baseCountryDetails.currencies;
+        document.getElementById('c1Language').innerHTML = baseCountryDetails.languages;
+        document.getElementById('c1Flag').src = baseCountryDetails.flag;
+
+        // Compare Country
+        document.getElementById('c2Name').innerHTML = compareCountryDetails.name.common;
+        document.getElementById('c2Capital').innerHTML = compareCountryDetails.capital[0];
+        document.getElementById('c2Region').innerHTML = compareCountryDetails.subregion;
+        document.getElementById('c2Population').innerHTML = compareCountryDetails.population;
+        document.getElementById('c2Currency').innerHTML = compareCountryDetails.currencies[0];
+        document.getElementById('c2Language').innerHTML = compareCountryDetails.languages[0];
+        document.getElementById('c2Flag').src = compareCountryDetails.flag;
+
+
+
+    })
 
     // Perform 2nd API call to call info from 1st base country then 2nd compare country
     // $.ajax(baseSettings).done(function (baseResponse) {
