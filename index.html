@@ -112,18 +112,13 @@
                                         <input class="dropdownSeachBar" type="search" placeholder="Search Country Name">
                                     </div>
 
-                                    <div class="dropdowns">
+                                    <div class="dropdowns" data-base-countries-container>
                                         <!-- Countries from API go here -->
-                                        <li class="dropdown-item">Lorem, ipsum.</ class="dropdown-item">
-                                        <li>Lorem, ipsum.</li>
-                                        <li>Lorem, ipsum.</li>
-                                        <li>Lorem, ipsum.</li>
-                                        <li>Lorem, ipsum.</li>
-                                        <li>Lorem, ipsum.</li>
-                                        <li>Lorem, ipsum.</li>
-                                        <li>Lorem, ipsum.</li>
-                                        <li>Lorem, ipsum.</li>
-                                        <li>Lorem, ipsum.</li>
+                                        <template data-country-item-template>
+                                            <li class="dropdown-item" data-country-item>
+                                                <!-- Country name and capital go here -->
+                                            </li>
+                                        </template>
                                     </div>
                                 </ul>
                             </div>
@@ -154,8 +149,13 @@
                                         <input class="dropdownSeachBar" type="search" placeholder="Search Country Name">
                                     </div>
 
-                                    <div class="dropdowns">
+                                    <div class="dropdowns" data-compare-countries-container>
                                         <!-- Countries from API go here -->
+                                        <template data-country-item-template>
+                                            <li class="dropdown-item" data-country-item>
+                                                <!-- Country name and capital go here -->
+                                            </li>
+                                        </template>
                                     </div>
                                 </ul>
                             </div>
