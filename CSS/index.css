@@ -17,6 +17,26 @@
     --dark-grey: #333;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar{
+    width: .3rem;
+}
+
+::-webkit-scrollbar-track{
+    background: var(--transparent);
+    margin-block: .3rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--money-green);
+    opacity: 50%;
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    opacity: 100%;
+}
+
 /* Common CSS */
 * {
     margin: 0;
@@ -53,6 +73,10 @@ a {
     font-weight: bold;
     letter-spacing: .2rem;
     text-align: center;
+}
+
+.btn:focus{
+    box-shadow: 0 0 0 0 !important;
 }
 
 /* Index Page Start */
@@ -210,15 +234,51 @@ video {
     height: 300px;
     overflow-y: scroll;
     border-radius: 15px;
+    padding: 1rem;
 }
 
-.dropdown-item {
+.dropdown-item, .filter-dropdown-item {
     width: 100%;
     cursor: pointer;
     padding: .5rem 1rem;
 }
 
-.dropdown-item:hover {
+.countryFilterSearch{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-magnifying-glass-location{
+    color: var(--money-green);
+}
+
+.dropdownSeachBar{
+    width: 100%;
+    margin: 0;
+    padding: .5rem;
+    border: none;
+    border-bottom: 1px solid var(--money-green);
+    border-radius: 0;
+    color: var(--money-green);
+    font-size: .9rem;
+}
+
+.dropdownSeachBar:focus{
+    background-color: var(--transparent);
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--money-green);
+    color: var(--money-green);
+}
+
+.dropdownSeachBar::placeholder{
+    color: var(--money-green);
+    font-size: .9rem;
+}
+
+.dropdown-item:hover, .filter-dropdown-item:hover {
     transform: translateY(-2px);
     transition: all .3s ease-in-out;
 }

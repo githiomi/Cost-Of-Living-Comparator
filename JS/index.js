@@ -10,8 +10,8 @@ var type = new Typed(".typewriter", {
 const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 
-const rapidApiKey = apiKeysConfig.rapidApiKey;
-const XRapidApiHost = apiKeysConfig.countryFactsApiHost;
+const rapidApiKey = apiKeysConfig.factsRapidApiKey;
+const XRapidApiHost = apiKeysConfig.factsApiHost;
 
 const settings = {
     "async": true,
@@ -26,7 +26,7 @@ const settings = {
 
 // Check if page is ready then perform API request to manipulate the DOM accordingly
 $(document).ready(function () {
-    $.ajax(settings).done(function (response) {
+    // $.ajax(settings).done(function (response) {
 
         console.log(response); // log response to confirm in console
 

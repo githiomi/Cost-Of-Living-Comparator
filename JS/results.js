@@ -34,8 +34,8 @@ $('.accordionCompareTownName').each(function () {
 const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 
-const factsRapidApiKey = apiKeysConfig.rapidApiKey;
-const factsRapidApiHost = apiKeysConfig.countryFactsApiHost;
+const factsRapidApiKey = apiKeysConfig.factsRapidApiKey;
+const factsRapidApiHost = apiKeysConfig.factsApiHost;
 
 const factsSettings = {
     "async": true,
@@ -84,7 +84,7 @@ const compareSettings = {
 $(document).ready(function () {
 
     // Perform 1st API Call to Facts API
-    $.ajax(factsSettings).done( (response) => {
+    // $.ajax(factsSettings).done( (response) => {
         console.log(response);
 
         // To get any country details
@@ -125,7 +125,7 @@ $(document).ready(function () {
     });
 
     // Perform 2nd API call to call info from 1st base country then 2nd compare country
-    $.ajax(baseSettings).done(function (baseResponse) {
+    // $.ajax(baseSettings).done(function (baseResponse) {
         console.log(baseResponse);
 
         const baseCurr = baseResponse.prices[0].currency_code;
@@ -153,7 +153,7 @@ $(document).ready(function () {
 
     });
 
-    $.ajax(compareSettings).done(function (compareResponse) {
+    // $.ajax(compareSettings).done(function (compareResponse) {
         console.log(compareResponse);
         const compareCurr = compareResponse.prices[0].currency_code;
         // Add currency to country details
