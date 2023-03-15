@@ -8,7 +8,7 @@
 :root {
     --main-background-color: #1E1E1E;
     --white-text-color: white;
-    --money-green: green;
+    --money-green: #F18F01;
     --white: white;
     --warning-red: red;
     --transparent: transparent;
@@ -326,9 +326,13 @@ video {
 
 #filter .dropdown ul {
     border: none;
-    border-radius: 0;
+    border-radius: 15px;
     overflow-y: hidden;
     height: auto;
+}
+
+.dropdowns{
+    margin-top: .3rem;
 }
 
 .dropdowns ul{
@@ -344,7 +348,7 @@ video {
 
 .accordion-item {
     border: 1px solid var(--money-green);
-    transition: box-shadow 0.4s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .accordion-item:hover {
@@ -353,7 +357,6 @@ video {
 
 .accordion-item,
 .accordion-item button {
-    width: 100%;
     margin: 1rem;
     background-color: var(--dark-grey);
     border-radius: 8px;
@@ -366,7 +369,6 @@ video {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: transparent;
 }
 
 .accordion-button {
@@ -383,6 +385,14 @@ video {
 .accordion-button.collapsed {
     color: var(--white-text-color) !important;
     background-color: var(--dark-grey) !important;
+}
+
+.accordion-button:focus{
+    box-shadow: 0 0 0 0;
+}
+
+.accordion-button::after{
+    background-image : url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")
 }
 
 .accordionName {
