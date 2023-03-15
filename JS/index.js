@@ -6,6 +6,13 @@ var type = new Typed(".typewriter", {
     loop: true
 });
 
+// Country Search Filter Functionality
+//List of all the countries
+let countries = [];
+
+
+
+
 // To get country data from the API
 const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
@@ -26,52 +33,64 @@ const settings = {
 
 // Check if page is ready then perform API request to manipulate the DOM accordingly
 $(document).ready(function () {
-    // $.ajax(settings).done(function (response) {
+    $.ajax(settings).done(function (response) {
 
         console.log(response); // log response to confirm in console
 
-        // Get dropdown divs
-        const baseDropDown = document.querySelectorAll(".dropdowns")[0];
-        for (let i = 0; i < response.length; i++) {
-
-            // Create an 'a' tag
-            newA = document.createElement("a");
-            newA.classList.add("base-item");
-            newA.classList.add("dropdown-item");
-
-            // Add content to the dropdown item
-            current = response[i];
-            newA.appendChild(document.createTextNode(`${current.name.common}, ${current.capital[0]}`));
-
-            // Add the 'a' to a list item
-            newLi = document.createElement("li")
-            newLi.appendChild(newA);
-
-            // Add the new 'li' to the dropdown
-            baseDropDown.appendChild(newLi);
-
+        // Get all countries and add them to the countries list
+        for (let c = 0; c < response.length; c ++){
+            let current = response[c];
+            let country = {
+                name : current.name.common,
+                capital : current.capital[0]
+            }
+            countries[c] = country;
         }
+
+        console.log(countries);
+
+        // // Get dropdown divs
+        // const baseDropDown = document.querySelectorAll(".dropdowns")[0];
+        // for (let i = 0; i < response.length; i++) {
+
+        //     // Create an 'a' tag
+        //     newA = document.createElement("a");
+        //     newA.classList.add("base-item");
+        //     newA.classList.add("dropdown-item");
+
+        //     // Add content to the dropdown item
+        //     current = response[i];
+        //     newA.appendChild(document.createTextNode(`${current.name.common}, ${current.capital[0]}`));
+
+        //     // Add the 'a' to a list item
+        //     newLi = document.createElement("li")
+        //     newLi.appendChild(newA);
+
+        //     // Add the new 'li' to the dropdown
+        //     baseDropDown.appendChild(newLi);
+
+        // }
         
-        const compareDropDown = document.querySelectorAll(".dropdowns")[1];
-        for (let i = 0; i < response.length; i++) {
+        // const compareDropDown = document.querySelectorAll(".dropdowns")[1];
+        // for (let i = 0; i < response.length; i++) {
 
-            // Create an 'a' tag
-            newA = document.createElement("a");
-            newA.classList.add("compare-item");
-            newA.classList.add("dropdown-item");
+        //     // Create an 'a' tag
+        //     newA = document.createElement("a");
+        //     newA.classList.add("compare-item");
+        //     newA.classList.add("dropdown-item");
 
-            // Add content to the dropdown item
-            current = response[i];
-            newA.appendChild(document.createTextNode(`${current.name.common}, ${current.capital[0]}`));
+        //     // Add content to the dropdown item
+        //     current = response[i];
+        //     newA.appendChild(document.createTextNode(`${current.name.common}, ${current.capital[0]}`));
 
-            // Add the 'a' to a list item
-            newLi = document.createElement("li")
-            newLi.appendChild(newA);
+        //     // Add the 'a' to a list item
+        //     newLi = document.createElement("li")
+        //     newLi.appendChild(newA);
 
-            // Add the new 'li' to the dropdown
-            compareDropDown.appendChild(newLi);
+        //     // Add the new 'li' to the dropdown
+        //     compareDropDown.appendChild(newLi);
 
-        }
+        // }
 
         // When a dropdown item is clicked, fill the button
         // Base

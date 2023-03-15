@@ -446,10 +446,6 @@ video {
     box-shadow: 0 0 0 0;
 }
 
-.accordion-button::after{
-    background-image : url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")
-}
-
 .accordionName {
     display: flex;
     align-items: center;
@@ -568,7 +564,7 @@ p>span {
 .formSvg {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 3rem;
 }
 
 .status {
@@ -605,6 +601,12 @@ p>span {
     padding: 0.3rem 0.5rem;
 }
 
+.serverButtons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .connectBtn:hover,
 .viewMessageBtn:hover {
     transform: scale(0.95);
@@ -628,7 +630,7 @@ textarea {
     outline: none;
     background-color: var(--transparent);
     border: 1px solid white;
-    color: var(--white-text-color);
+    color: var(--money-green);
 }
 
 input:focus,
@@ -641,6 +643,7 @@ textarea:focus {
 
 textarea {
     height: 180px;
+    font-style: italic;
 }
 
 .names {
@@ -916,6 +919,10 @@ textarea {
         width: 100%;
         flex-direction: column;
         align-items: center;
+    }
+
+    .serverButtons{
+        flex-direction: column;
     }
 
     input,
