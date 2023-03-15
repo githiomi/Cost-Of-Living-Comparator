@@ -320,13 +320,8 @@ video {
     margin-top: 3rem;
 }
 
-#filter .dropdown button {
-    padding: 1rem 2rem;
-}
-
 #filter .dropdown ul {
     border: none;
-    border-radius: 15px;
     overflow-y: hidden;
     height: auto;
 }

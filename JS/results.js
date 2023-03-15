@@ -122,44 +122,61 @@ $(document).ready(function () {
         document.getElementById('c2Language').innerHTML = compareCountryDetails.languages[0];
         document.getElementById('c2Flag').src = compareCountryDetails.flag;
 
-
-
-    })
+    });
 
     // Perform 2nd API call to call info from 1st base country then 2nd compare country
-    // $.ajax(baseSettings).done(function (baseResponse) {
-    //     console.log(baseResponse);
+    $.ajax(baseSettings).done(function (baseResponse) {
+        console.log(baseResponse);
 
-    //     if (baseResponse.prices[2].currency_code == undefined) return;
+        const baseCurr = baseResponse.prices[0].currency_code;
+        // Add currency to country details
+        document.getElementById('c1Currency').innerHTML = baseCurr;
+        // Get price info
+        const c1EduA = baseCurr + ". " + baseResponse.prices[2].avg;
+        const c1EduB = baseCurr + ". " + baseResponse.prices[3].avg;
+        const c1TranA = baseCurr + ". " + baseResponse.prices[40].avg;
+        const c1TranB = baseCurr + ". " + baseResponse.prices[42].avg;
+        const c1HouA = baseCurr + ". " + baseResponse.prices[26].avg;
+        const c1HouB = baseCurr + ". " + baseResponse.prices[28].avg;
+        const c1UtiA = baseCurr + ". " + baseResponse.prices[48].avg;
+        const c1UtiB = baseCurr + ". " + baseResponse.prices[49].avg;
 
-    //     const baseCurr = baseResponse.prices[2].currency_code;
-    //     const c1Edu = baseCurr + ". " + baseResponse.prices[2].avg;
-    //     const c1Tran = baseCurr + ". " + baseResponse.prices[44].avg;
-    //     const c1Hou = baseCurr + ". " + baseResponse.prices[26].avg;
-    //     const c1Hou = baseCurr + ". " + baseResponse.prices[26].avg;
-    //     const c1Uti = baseCurr + ". " + baseResponse.prices[48].avg;
+        // Manipulate the DOM
+        document.querySelector('.educationBaseTownCost1').innerHTML = c1EduA;
+        document.querySelector('.educationBaseTownCost2').innerHTML = c1EduB;
+        document.querySelector('.transportBaseTownCost1').innerHTML = c1TranA;
+        document.querySelector('.transportBaseTownCost2').innerHTML = c1TranB;
+        document.querySelector('.housingBaseTownCost1').innerHTML = c1HouA;
+        document.querySelector('.housingBaseTownCost2').innerHTML = c1HouB;
+        document.querySelector('.utilitiesBaseTownCost1').innerHTML = c1UtiA;
+        document.querySelector('.utilitiesBaseTownCost2').innerHTML = c1UtiB;
 
-    //     // Manipulate the DOM
-    //     document.querySelector('.educationBaseTownCost1').innerHTML = c1Edu;
-    //     document.querySelector('.c1Tran').innerHTML = c1Tran;
-    //     document.querySelector('.c1Hou').innerHTML = c1Hou;
-    //     document.querySelector('.c1Uti').innerHTML = c1Uti;
+    });
 
-    // });
+    $.ajax(compareSettings).done(function (compareResponse) {
+        console.log(compareResponse);
+        const compareCurr = compareResponse.prices[0].currency_code;
+        // Add currency to country details
+        document.getElementById('c2Currency').innerHTML = compareCurr;
+        // Get price info
+        const c2EduA = compareCurr + ". " + compareResponse.prices[2].avg;
+        const c2EduB = compareCurr + ". " + compareResponse.prices[3].avg;
+        const c2TranA = compareCurr + ". " + compareResponse.prices[40].avg;
+        const c2TranB = compareCurr + ". " + compareResponse.prices[42].avg;
+        const c2HouA = compareCurr + ". " + compareResponse.prices[26].avg;
+        const c2HouB = compareCurr + ". " + compareResponse.prices[28].avg;
+        const c2UtiA = compareCurr + ". " + compareResponse.prices[48].avg;
+        const c2UtiB = compareCurr + ". " + compareResponse.prices[49].avg;
 
-    // $.ajax(compareSettings).done(function (compareResponse) {
-    //     console.log(compareResponse);
-    //     const compareCurr = compareResponse.prices[2].currency_code;
-    //     const c2Edu = compareCurr + ". " + compareResponse.prices[2].avg;;
-    //     const c2Tran = compareCurr + ". " + compareResponse.prices[44].avg;
-    //     const c2Hou = compareCurr + ". " + compareResponse.prices[26].avg;
-    //     const c2Uti = compareCurr + ". " + compareResponse.prices[48].avg;
-
-    //     // Manipulate the DOM
-    //     document.querySelector('.educationCompareTownCost1').innerHTML = c2Edu;
-    //     document.querySelector('.c2Tran').innerHTML = c2Tran;
-    //     document.querySelector('.c2Hou').innerHTML = c2Hou;
-    //     document.querySelector('.c2Uti').innerHTML = c2Uti;
-    // });
+        // Manipulate the DOM
+        document.querySelector('.educationCompareTownCost1').innerHTML = c2EduA;
+        document.querySelector('.educationCompareTownCost2').innerHTML = c2EduB;
+        document.querySelector('.transportCompareTownCost1').innerHTML = c2TranA;
+        document.querySelector('.transportCompareTownCost2').innerHTML = c2TranB;
+        document.querySelector('.housingCompareTownCost1').innerHTML = c2HouA;
+        document.querySelector('.housingCompareTownCost2').innerHTML = c2HouB;
+        document.querySelector('.utilitiesCompareTownCost1').innerHTML = c2UtiA;
+        document.querySelector('.utilitiesCompareTownCost2').innerHTML = c2UtiB;
+    });
 
 });
