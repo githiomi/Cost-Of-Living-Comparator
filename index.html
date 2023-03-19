@@ -109,13 +109,13 @@
                                     <!-- Country Seach bar -->
                                     <div class="countryFilterSearch">
                                         <i class="fa-solid fa-magnifying-glass-location"></i>
-                                        <input class="dropdownSeachBar" type="search" placeholder="Search Country Name">
+                                        <input id="baseSearchBar" class="dropdownSeachBar" type="search" placeholder="Search Country Name">
                                     </div>
 
                                     <div class="dropdowns" data-base-countries-container>
                                         <!-- Countries from API go here -->
-                                        <template data-country-item-template>
-                                            <li class="dropdown-item" data-country-item>
+                                        <template data-base-item-template>
+                                            <li class="base-item dropdown-item" data-base-item>
                                                 <!-- Country name and capital go here -->
                                             </li>
                                         </template>
@@ -146,13 +146,13 @@
                                     <!-- Country Seach bar -->
                                     <div class="countryFilterSearch">
                                         <i class="fa-solid fa-magnifying-glass-location"></i>
-                                        <input class="dropdownSeachBar" type="search" placeholder="Search Country Name">
+                                        <input id="compareSearchBar" class="dropdownSeachBar" type="search" placeholder="Search Country Name">
                                     </div>
 
                                     <div class="dropdowns" data-compare-countries-container>
                                         <!-- Countries from API go here -->
-                                        <template data-country-item-template>
-                                            <li class="dropdown-item" data-country-item>
+                                        <template data-compare-item-template>
+                                            <li class="compare-item dropdown-item" data-compare-item>
                                                 <!-- Country name and capital go here -->
                                             </li>
                                         </template>

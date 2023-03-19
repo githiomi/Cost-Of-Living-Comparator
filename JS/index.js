@@ -13,6 +13,14 @@ const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 const rapidApiKey = apiKeysConfig.factsRapidApiKey;
 const XRapidApiHost = apiKeysConfig.factsApiHost;
 
+// factsRapidApiKey: "6be39fc74emsh49a66936dfb631bp17d8aajsn686d83456a0e",
+
+//     pricesRapidApiKey : "a6501f3a61msh9175d3e50307254p170f58jsn5328327f4f0d",
+
+//         factsApiHost : "country-facts.p.rapidapi.com",
+
+//             costOfLivingApiHost: "cost-of-living-and-prices.p.rapidapi.com"
+
 const settings = {
     "async": true,
     "crossDomain": true,
@@ -30,6 +38,7 @@ $(document).ready(function () {
     // List to store all retrieved countries
     let countries = [];
 
+    // Make API call to retrieve all the countries
     $.ajax(settings).done(function (response) {
 
         console.log(response); // log response to confirm in console
@@ -46,49 +55,74 @@ $(document).ready(function () {
 
         console.log(countries);
 
-        // Filter functionality
         // Get the template
-        const countryTemplate = document.querySelector('[data-country-item-template');
+        const baseTemplate = document.querySelector('[data-base-item-template');
+        const compareTemplate = document.querySelector('[data-compare-item-template');
 
-        function createElement(container, countries) {
+        function createBaseElement(container, countries) {
 
             for (let i = 0; i < countries.length; i++) {
 
-                const countryItem = countryTemplate.content.cloneNode(true);
-                const itemName = countryItem.querySelector('[data-country-item');
+                let template = baseTemplate.content.cloneNode(true);
+                let itemName = template.querySelector('[data-base-item');
 
                 currentCountry = countries[i];
                 itemName.textContent = `${currentCountry.name}, ${currentCountry.capital}`;
-                container.append(itemName);
+                container.append(template);
+
+            }
+        }
+
+        function createCompareElement(container, countries) {
+
+            for (let i = 0; i < countries.length; i++) {
+
+                let template = compareTemplate.content.cloneNode(true);
+                let itemName = template.querySelector('[data-compare-item');
+
+                currentCountry = countries[i];
+                itemName.textContent = `${currentCountry.name}, ${currentCountry.capital}`;
+                container.append(template);
 
             }
         }
 
         // Get both country dropdowns and populate
         const baseDropDown = document.querySelector('[data-base-countries-container');
-        createElement(baseDropDown, countries)
+        createBaseElement(baseDropDown, countries)
         const compareDropDown = document.querySelector('[data-compare-countries-container');
-        createElement(compareDropDown, countries)
+        createCompareElement(compareDropDown, countries)
 
         // When a dropdown item is clicked, fill the button
-        // Get base text display
+        // Base selection
         const baseText = document.getElementById('baseTownSelected');
         $('.base-item').each(function () {
 
             $(this).click(function () {
+                console.log("Clicked base item")
                 // Change text to clicked
                 baseText.innerHTML = $(this).text();
             });
         });
-        // Compare
+
+        // Compare Selection
         const compareText = document.getElementById('compareTownSelected');
         $('.compare-item').each(function () {
 
             $(this).click(function () {
+                console.log("Clicked compare item")
                 // Change text to clicked
                 compareText.innerHTML = $(this).text();
             });
         });
+
+        // Filter functionality
+        const baseSearchBar = document.getElementById('baseSearchBar').addEventListener("input", e => {
+            console.log(e.target.value);
+        });
+        const compareSearchBar = document.getElementById('compareSearchBar').addEventListener("input", e => {
+            console.log(e.target.value);
+        })
 
     });
 
@@ -100,12 +134,12 @@ $(document).ready(function () {
         var key = 'searchData';
 
         // Get base details
-        const base = document.getElementById("baseTownSelected").textContent;
+        const base = baseText.textContent;
         baseCountry = base.split(',')[0];
         baseCapital = base.split(',')[1];
 
         // Get compare details
-        const compare = document.getElementById("compareTownSelected").textContent;
+        const compare = compareText.textContent;
         compareCountry = compare.split(',')[0];
         compareCapital = compare.split(',')[1];
 

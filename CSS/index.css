@@ -283,6 +283,10 @@ video {
     transition: all .3s ease-in-out;
 }
 
+.dropdown-hide{
+    display: none;
+}
+
 .compareText {
     color: var(--money-green);
 }
