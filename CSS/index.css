@@ -232,13 +232,13 @@ video {
     width: 75%;
     height: 300px;
     overflow-y: scroll;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     padding: 1rem;
 }
 
 .dropdown-item, .filter-dropdown-item {
     cursor: pointer;
-    padding: .3rem .8rem;
+    padding: .4rem .5rem;
 }
 
 .countryFilterSearch{
@@ -277,6 +277,7 @@ video {
 }
 
 .dropdown-item:hover, .filter-dropdown-item:hover {
+    background-color: rgba(241, 145, 1, 0.3);
     transform: translateY(-2px);
     transition: all .3s ease-in-out;
 }
@@ -352,7 +353,7 @@ video {
     padding: 1rem 0;
     border: 1px solid var(--white);
     border-radius: 8px;
-    width: 75%;
+    width: 80%;
     margin: 1rem auto;
 }
 
@@ -360,6 +361,17 @@ video {
     padding-left: .3rem;
 }
 
+.coordinates{
+    text-decoration: underline;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.coordinates:hover{
+    transform: scale(1.03);
+    transform: translateY(-2px);
+    transition: all .3s ease-in-out;
+}
 
 .baseTown .townDescription .detailTitle {
     color: var(--money-green);
