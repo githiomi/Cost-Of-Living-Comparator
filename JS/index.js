@@ -13,14 +13,6 @@ const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 const rapidApiKey = apiKeysConfig.factsRapidApiKey;
 const XRapidApiHost = apiKeysConfig.factsApiHost;
 
-// factsRapidApiKey: "6be39fc74emsh49a66936dfb631bp17d8aajsn686d83456a0e",
-
-//     pricesRapidApiKey : "a6501f3a61msh9175d3e50307254p170f58jsn5328327f4f0d",
-
-//         factsApiHost : "country-facts.p.rapidapi.com",
-
-//             costOfLivingApiHost: "cost-of-living-and-prices.p.rapidapi.com"
-
 const settings = {
     "async": true,
     "crossDomain": true,
@@ -39,7 +31,7 @@ $(document).ready(function () {
     let countries = [];
 
     // Make API call to retrieve all the countries
-    $.ajax(settings).done(function (response) {
+    // $.ajax(settings).done(function (response) {
 
         console.log(response); // log response to confirm in console
 
@@ -99,7 +91,6 @@ $(document).ready(function () {
         $('.base-item').each(function () {
 
             $(this).click(function () {
-                console.log("Clicked base item")
                 // Change text to clicked
                 baseText.innerHTML = $(this).text();
             });
@@ -110,7 +101,6 @@ $(document).ready(function () {
         $('.compare-item').each(function () {
 
             $(this).click(function () {
-                console.log("Clicked compare item")
                 // Change text to clicked
                 compareText.innerHTML = $(this).text();
             });
@@ -134,12 +124,12 @@ $(document).ready(function () {
         var key = 'searchData';
 
         // Get base details
-        const base = baseText.textContent;
+        const base = document.getElementById('baseTownSelected').textContent;
         baseCountry = base.split(',')[0];
         baseCapital = base.split(',')[1];
 
         // Get compare details
-        const compare = compareText.textContent;
+        const compare = document.getElementById('compareTownSelected').textContent;
         compareCountry = compare.split(',')[0];
         compareCapital = compare.split(',')[1];
 

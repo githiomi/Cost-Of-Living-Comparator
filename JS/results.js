@@ -34,8 +34,8 @@ $('.accordionCompareTownName').each(function () {
 const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 
-// const factsRapidApiKey = apiKeysConfig.factsRapidApiKey;
-// const factsRapidApiHost = apiKeysConfig.factsApiHost;
+const factsRapidApiKey = apiKeysConfig.factsRapidApiKey;
+const factsRapidApiHost = apiKeysConfig.factsApiHost;
 
 const factsSettings = {
     "async": true,
@@ -50,8 +50,8 @@ const factsSettings = {
 // 1st API Call Config End
 
 // 2nd API Call Config
-// const rapidApiKey = apiKeysConfig.rapidApiKey;
-// const rapidApiHost = apiKeysConfig.costOfLivingApiHost;
+const rapidApiKey = apiKeysConfig.rapidApiKey;
+const rapidApiHost = apiKeysConfig.costOfLivingApiHost;
 
 // baseUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${baseCapital}&country_name=${baseCountry}`
 baseUrl = "https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=Port%20Louis&country_name=Mauritius";
@@ -84,7 +84,7 @@ const compareSettings = {
 $(document).ready(function () {
 
     // Perform 1st API Call to Facts API
-    $.ajax(factsSettings).done( (response) => {
+    // $.ajax(factsSettings).done( (response) => {
         console.log(response);
 
         // To get any country details
@@ -109,8 +109,6 @@ $(document).ready(function () {
         document.getElementById('c1Capital').innerHTML = baseCountryDetails.capital[0];
         document.getElementById('c1Region').innerHTML = baseCountryDetails.subregion;
         document.getElementById('c1Population').innerHTML = baseCountryDetails.population;
-        document.getElementById('c1Currency').innerHTML = baseCountryDetails.currencies;
-        document.getElementById('c1Language').innerHTML = baseCountryDetails.languages;
         document.getElementById('c1Flag').src = baseCountryDetails.flag;
 
         // Compare Country
@@ -118,8 +116,6 @@ $(document).ready(function () {
         document.getElementById('c2Capital').innerHTML = compareCountryDetails.capital[0];
         document.getElementById('c2Region').innerHTML = compareCountryDetails.subregion;
         document.getElementById('c2Population').innerHTML = compareCountryDetails.population;
-        document.getElementById('c2Currency').innerHTML = compareCountryDetails.currencies[0];
-        document.getElementById('c2Language').innerHTML = compareCountryDetails.languages[0];
         document.getElementById('c2Flag').src = compareCountryDetails.flag;
 
     });
