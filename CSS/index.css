@@ -19,22 +19,21 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar{
-    width: .3rem;
+    width: .4rem;
 }
 
 ::-webkit-scrollbar-track{
-    background: var(--transparent);
     margin-block: .3rem;
 }
 
 ::-webkit-scrollbar-thumb{
     background: var(--money-green);
-    opacity: 50%;
+    opacity: .2;
     border-radius: 100vw;
 }
 
 ::-webkit-scrollbar-thumb:hover{
-    opacity: 100%;
+    opacity: 1;
 }
 
 /* Common CSS */
@@ -84,7 +83,7 @@ body {
     min-height: 100vh;
     width: 100%;
     background-color: var(--main-background-color);
-    background: linear-gradient(var(--main-background-color), rgb(20, 30, 20));
+    /* background: linear-gradient(var(--main-background-color), rgb(20, 30, 20)); */
     color: var(--white-text-color);
 }
 
@@ -214,7 +213,7 @@ video {
 
 .dropdown button {
     font-size: 15px;
-    width: 70%;
+    width: 75%;
     padding: 1rem;
     border: 2px solid var(--white);
     border-radius: 30px;
@@ -230,7 +229,7 @@ video {
 }
 
 .dropdown ul {
-    width: 70%;
+    width: 75%;
     height: 300px;
     overflow-y: scroll;
     border-radius: 15px;
@@ -238,9 +237,8 @@ video {
 }
 
 .dropdown-item, .filter-dropdown-item {
-    width: 100%;
     cursor: pointer;
-    padding: .5rem 1rem;
+    padding: .3rem .8rem;
 }
 
 .countryFilterSearch{
@@ -911,7 +909,12 @@ textarea {
     }
 
     .dropdown button {
-        font-size: 15px;
+        font-size: 14px;
+    }
+
+    .dropdown-item, .filter-dropdown-item {
+        font-size: .9rem;
+        padding: .2rem .8rem;
     }
 
     .searchTitle {

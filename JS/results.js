@@ -2,9 +2,9 @@
 var key = 'searchData';
 var searchData = JSON.parse(window.localStorage.getItem(key));
 
-var baseCapital = searchData.baseCapital;
+var baseCapital = searchData.baseCapital.trim();
 var baseCountry = searchData.baseCountry;
-var compareCapital = searchData.compareCapital;
+var compareCapital = searchData.compareCapital.trim();
 var compareCountry = searchData.compareCountry;
 
 console.log(`Base Capital: ${baseCapital}`);
@@ -29,7 +29,7 @@ $('.accordionCompareTownName').each(function () {
     $(this).innerHTML = compareCapital;
 })
 
-//1st API Call Config
+//  1st API Call Config
 // To get country data from the API
 const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
@@ -53,8 +53,7 @@ const factsSettings = {
 const rapidApiKey = apiKeysConfig.rapidApiKey;
 const rapidApiHost = apiKeysConfig.costOfLivingApiHost;
 
-// baseUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${baseCapital}&country_name=${baseCountry}`
-baseUrl = "https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=Port%20Louis&country_name=Mauritius";
+let baseUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${baseCapital}&country_name=${baseCountry}`;
 const baseSettings = {
     "async": true,
     "crossDomain": true,
@@ -66,8 +65,7 @@ const baseSettings = {
     }
 };
 
-// compareUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${compareCapital}&country_name=${compareCountry}`;
-compareUrl = "https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=Nairobi&country_name=Kenya";
+let compareUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${compareCapital}&country_name=${compareCountry}`;
 const compareSettings = {
     "async": true,
     "crossDomain": true,
@@ -120,59 +118,79 @@ $(document).ready(function () {
 
     });
 
+    // Function to get data from the country array
+    function getData(currency, response, itemId){
+        let responseItem = response.prices[itemId];
+
+        if (responseItem == null || responseItem == undefined) return "Undefined";
+
+        return `${currency}. ${responseItem.avg}`
+    }
+
+    // Function to update the DOM
+    function updateDOM(element, content) {
+        if (element == null) return "Undefined";
+
+        element.innerHTML = content;
+    };
+
     // Perform 2nd API call to call info from 1st base country then 2nd compare country
-    $.ajax(baseSettings).done(function (baseResponse) {
+    // $.ajax(baseSettings).done(function (baseResponse) {
         console.log(baseResponse);
 
         const baseCurr = baseResponse.prices[0].currency_code;
         // Add currency to country details
         document.getElementById('c1Currency').innerHTML = baseCurr;
+
         // Get price info
-        const c1EduA = baseCurr + ". " + baseResponse.prices[2].avg;
-        const c1EduB = baseCurr + ". " + baseResponse.prices[3].avg;
-        const c1TranA = baseCurr + ". " + baseResponse.prices[40].avg;
-        const c1TranB = baseCurr + ". " + baseResponse.prices[42].avg;
-        const c1HouA = baseCurr + ". " + baseResponse.prices[26].avg;
-        const c1HouB = baseCurr + ". " + baseResponse.prices[28].avg;
-        const c1UtiA = baseCurr + ". " + baseResponse.prices[48].avg;
-        const c1UtiB = baseCurr + ". " + baseResponse.prices[49].avg;
+        const c1EduA = getData(baseCurr, baseResponse, 2);
+        const c1EduB = getData(baseCurr, baseResponse, 3);
+        const c1TranA = getData(baseCurr, baseResponse, 40);
+        const c1TranB = getData(baseCurr, baseResponse, 42);
+        const c1HouA = getData(baseCurr, baseResponse, 26);
+        const c1HouB = getData(baseCurr, baseResponse, 28);
+        const c1UtiA = getData(baseCurr, baseResponse, 48);
+        const c1UtiB = getData(baseCurr, baseResponse, 49);
 
         // Manipulate the DOM
-        document.querySelector('.educationBaseTownCost1').innerHTML = c1EduA;
-        document.querySelector('.educationBaseTownCost2').innerHTML = c1EduB;
-        document.querySelector('.transportBaseTownCost1').innerHTML = c1TranA;
-        document.querySelector('.transportBaseTownCost2').innerHTML = c1TranB;
-        document.querySelector('.housingBaseTownCost1').innerHTML = c1HouA;
-        document.querySelector('.housingBaseTownCost2').innerHTML = c1HouB;
-        document.querySelector('.utilitiesBaseTownCost1').innerHTML = c1UtiA;
-        document.querySelector('.utilitiesBaseTownCost2').innerHTML = c1UtiB;
+        updateDOM(document.querySelector('.educationBaseTownCost1'), c1EduA);
+        updateDOM(document.querySelector('.educationBaseTownCost2'), c1EduB);
+        updateDOM(document.querySelector('.transportBaseTownCost1'), c1TranA);
+        updateDOM(document.querySelector('.transportBaseTownCost2'), c1TranB);
+        updateDOM(document.querySelector('.housingBaseTownCost1'), c1HouA);
+        updateDOM(document.querySelector('.housingBaseTownCost2'), c1HouA);
+        updateDOM(document.querySelector('.utilitiesBaseTownCost1'), c1UtiA);
+        updateDOM(document.querySelector('.utilitiesBaseTownCost2'), c1UtiB);
 
     });
 
-    $.ajax(compareSettings).done(function (compareResponse) {
+    // $.ajax(compareSettings).done(function (compareResponse) {
         console.log(compareResponse);
+
         const compareCurr = compareResponse.prices[0].currency_code;
         // Add currency to country details
         document.getElementById('c2Currency').innerHTML = compareCurr;
+        
         // Get price info
-        const c2EduA = compareCurr + ". " + compareResponse.prices[2].avg;
-        const c2EduB = compareCurr + ". " + compareResponse.prices[3].avg;
-        const c2TranA = compareCurr + ". " + compareResponse.prices[40].avg;
-        const c2TranB = compareCurr + ". " + compareResponse.prices[42].avg;
-        const c2HouA = compareCurr + ". " + compareResponse.prices[26].avg;
-        const c2HouB = compareCurr + ". " + compareResponse.prices[28].avg;
-        const c2UtiA = compareCurr + ". " + compareResponse.prices[48].avg;
-        const c2UtiB = compareCurr + ". " + compareResponse.prices[49].avg;
+        const c2EduA = getData(compareCurr, compareResponse, 2);
+        const c2EduB = getData(compareCurr, compareResponse, 3);
+        const c2TranA = getData(compareCurr, compareResponse, 40);
+        const c2TranB = getData(compareCurr, compareResponse, 42);
+        const c2HouA = getData(compareCurr, compareResponse, 26);
+        const c2HouB = getData(compareCurr, compareResponse, 28);
+        const c2UtiA = getData(compareCurr, compareResponse, 48);
+        const c2UtiB = getData(compareCurr, compareResponse, 49);
 
         // Manipulate the DOM
-        document.querySelector('.educationCompareTownCost1').innerHTML = c2EduA;
-        document.querySelector('.educationCompareTownCost2').innerHTML = c2EduB;
-        document.querySelector('.transportCompareTownCost1').innerHTML = c2TranA;
-        document.querySelector('.transportCompareTownCost2').innerHTML = c2TranB;
-        document.querySelector('.housingCompareTownCost1').innerHTML = c2HouA;
-        document.querySelector('.housingCompareTownCost2').innerHTML = c2HouB;
-        document.querySelector('.utilitiesCompareTownCost1').innerHTML = c2UtiA;
-        document.querySelector('.utilitiesCompareTownCost2').innerHTML = c2UtiB;
+        updateDOM(document.querySelector('.educationCompareTownCost1'), c2EduA);
+        updateDOM(document.querySelector('.educationCompareTownCost2'), c2EduB);
+        updateDOM(document.querySelector('.transportCompareTownCost1'), c2TranA);
+        updateDOM(document.querySelector('.transportCompareTownCost2'), c2TranB);
+        updateDOM(document.querySelector('.housingCompareTownCost1'), c2HouA);
+        updateDOM(document.querySelector('.housingCompareTownCost2'), c2HouA);
+        updateDOM(document.querySelector('.utilitiesCompareTownCost1'), c2UtiA);
+        updateDOM(document.querySelector('.utilitiesCompareTownCost2'), c2UtiB);
+
     });
 
 });
