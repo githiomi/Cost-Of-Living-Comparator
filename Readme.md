@@ -1,6 +1,6 @@
 # COST OF LIVING COMPARATOR
 
-## CREATED BY: DANIEL GITHIOMI
+> CREATED BY: DANIEL GITHIOMI
 
 ## Introduction
 
@@ -12,7 +12,7 @@ The website is aimed at allowing users to be able to select a country and view i
 
   ![SCREENSHOT](Resources/Images/Screenshot.png)
 
-  The link to the website design can be found [HERE](https://www.figma.com/file/2tc99f6AKhVpyL1cgpMNiz/Cost-Of-Living-Comparator?node-id=6%3A81&t=QUpEC61uM9045iAp-0) on Figma
+  The link to the website design can be found [here](https://www.figma.com/file/2tc99f6AKhVpyL1cgpMNiz/Cost-Of-Living-Comparator?node-id=6%3A81&t=QUpEC61uM9045iAp-0) on Figma
 
 ## Compatibility
 
@@ -34,9 +34,10 @@ It is made entirely using Visual Studio Code where all the following files were 
 * Bootstrap
 * Javascript
 * JQuery
-* APIs
-** [Country Facts](https://rapidapi.com/richardarthur228/api/country-facts/)
-** [Cost Of Living](https://rapidapi.com/traveltables/api/cost-of-living-and-prices/)
+* APIs used:
+
+  * [Country Facts](https://rapidapi.com/richardarthur228/api/country-facts/)
+  * [Cost Of Living](https://rapidapi.com/traveltables/api/cost-of-living-and-prices/)
 
 ## Requirements
 
@@ -45,11 +46,13 @@ You will need to have the following installed on your system:
 * Minimum 4GB of RAM
 * Browser (For example: Chrome/Safari/Firefox)
 * XAMPP
+* Rapid API account
 
 ## Setup Instructions
 
-* Git clone [THIS](https://github.com/githiomi/Cost-Of-Living-Comparator.git) repository into your terminal.  
+* Git clone [this](https://github.com/githiomi/Cost-Of-Living-Comparator.git) repository into your terminal.  
 * Open the folder in your favourite editor (for example Visual Studio Code)
+* With your Rapid API keys, update the **index.js** and **results.js** files
 * Ensure that the Apache and MySQl servers are running on XAMPP
 * Navigate to the directory containing the cloned repository and open it using "localhost"
 * Open and enjoy the website
@@ -65,4 +68,4 @@ Contact me through any of the following:
 
 Click the following to acces the license page: [Click-Here](https://githiomi.github.io/Privacy-Policy/)
 
-Copyright (c) {2022} Dhosio Co.
+>Copyright (c) {2023} Dhosio Co.
