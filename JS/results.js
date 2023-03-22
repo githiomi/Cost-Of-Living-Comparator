@@ -7,27 +7,18 @@ var baseCountry = searchData.baseCountry;
 var compareCapital = searchData.compareCapital.trim();
 var compareCountry = searchData.compareCountry;
 
-console.log(`Base Capital: ${baseCapital}`);
-console.log(`Base Country: ${baseCountry}`);
-console.log(`Compare Capital: ${compareCapital}`);
-console.log(`Compare Country: ${compareCountry}`);
-
 // Manipulate DOM with data from local storage
 document.getElementById('bTData').innerHTML = baseCapital + ", " + baseCountry;
 document.getElementById('cTData').innerHTML = compareCapital + ", " + compareCountry;
 
-// Enter town names into accordion titles
-$('.accordionBaseTownName').each( function () {
-    // Not working
-    console.log("Ready ---" + baseCapital)
-    $(this).innerHTML = baseCapital;
-})
+// Update accordion titles with town names
+let baseCapitals = document.querySelectorAll('.accordionBaseTownName');
+let compareCapitals = document.querySelectorAll('.accordionCompareTownName');
 
-$('.accordionCompareTownName').each(function () {
-    // Not working
-    console.log("Ready ---" + compareCapital)
-    $(this).innerHTML = compareCapital;
-})
+for (let i = 0; i < baseCapitals.length; i++){
+    document.querySelectorAll('.accordionBaseTownName')[i].innerHTML = baseCapital;
+    document.querySelectorAll('.accordionCompareTownName')[i].innerHTML = compareCapital;
+}
 
 //  1st API Call Config
 // To get country data from the API
@@ -127,7 +118,7 @@ $(document).ready(function () {
 
         // Add onclick listener to open map
         document.getElementById('c2Coordinates').setAttribute('href', `https://maps.google.com/?q=${cLatitude}, ${cLongitude}`);
-
+        
         document.getElementById('c2Flag').src = compareCountryDetails.flag;
 
     });

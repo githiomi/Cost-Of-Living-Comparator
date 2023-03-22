@@ -485,6 +485,15 @@ video {
     color: var(--white-text-color);
 }
 
+/* Canvas Section */
+.canvas{
+    display: grid;
+    place-items: center;
+    border-radius : inherit;
+    height: 450px;
+    margin: 3rem auto;
+}
+
 .countryGrid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
