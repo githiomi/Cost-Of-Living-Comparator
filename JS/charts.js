@@ -94,9 +94,6 @@ new Chart(housingContext, {
                 ],
                 borderWidth: 1
             }
-        ],
-        backgroundColor:[
-            '#F18F01'
         ]
     },
     options: {
@@ -114,7 +111,7 @@ const utilitiesContext = document.getElementById('utilitiesCanvas').getContext('
 new Chart(utilitiesContext, {
     type: 'line',
     data: {
-        labels: ['1 Bedroom Apartment', '3 Bedroom Apartment'],
+        labels: ['Basic House Utilities', 'Internet Per Month'],
         datasets: [
             {
                 label: `${baseCapital.toUpperCase()}`,
@@ -131,9 +128,6 @@ new Chart(utilitiesContext, {
                 ],
                 borderWidth: 1
             }
-        ],
-        backgroundColor:[
-            '#F18F01'
         ]
     },
     options: {

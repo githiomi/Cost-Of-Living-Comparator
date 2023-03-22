@@ -15,7 +15,7 @@ document.getElementById('cTData').innerHTML = compareCapital + ", " + compareCou
 let baseCapitals = document.querySelectorAll('.accordionBaseTownName');
 let compareCapitals = document.querySelectorAll('.accordionCompareTownName');
 
-for (let i = 0; i < baseCapitals.length; i++){
+for (let i = 0; i < baseCapitals.length; i++) {
     document.querySelectorAll('.accordionBaseTownName')[i].innerHTML = baseCapital;
     document.querySelectorAll('.accordionCompareTownName')[i].innerHTML = compareCapital;
 }
@@ -31,7 +31,7 @@ const factsRapidApiHost = apiKeysConfig.factsApiHost;
 const factsSettings = {
     "async": true,
     "crossDomain": true,
-    "url": countryFactsUrlAfrica,
+    "url": countryFactsUrlAll,
     "method": "GET",
     "headers": {
         "X-RapidAPI-Key": factsRapidApiKey,
@@ -41,7 +41,7 @@ const factsSettings = {
 // 1st API Call Config End
 
 // 2nd API Call Config
-const rapidApiKey = apiKeysConfig.rapidApiKey;
+// const rapidApiKey = apiKeysConfig.pricesRapidApiKey;
 const rapidApiHost = apiKeysConfig.costOfLivingApiHost;
 
 let baseUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${baseCapital}&country_name=${baseCountry}`;
@@ -71,17 +71,18 @@ const compareSettings = {
 
 // JQuery Functionality when page is loaded
 $(document).ready(function () {
+    var globalBaseResponse;
+    var globalCompareResponse;
 
     // Perform 1st API Call to Facts API
-    $.ajax(factsSettings).done( (response) => {
-        console.log(response);
+    $.ajax(factsSettings).done((response) => {
 
         // To get any country details
-        function getCountry(countryName){
+        function getCountry(countryName) {
             let returnCountry;
 
-            for (let c = 0; c < response.length; c++){
-                if (countryName === response[c].name.common){
+            for (let c = 0; c < response.length; c++) {
+                if (countryName === response[c].name.common) {
                     returnCountry = response[c];
                 }
             }
@@ -118,18 +119,19 @@ $(document).ready(function () {
 
         // Add onclick listener to open map
         document.getElementById('c2Coordinates').setAttribute('href', `https://maps.google.com/?q=${cLatitude}, ${cLongitude}`);
-        
+
         document.getElementById('c2Flag').src = compareCountryDetails.flag;
 
     });
 
     // Function to get data from the country array
-    function getData(currency, response, itemId){
+    function getData(currency, response, itemId) {
         let responseItem = response.prices[itemId];
 
         if (responseItem == null || responseItem == undefined) return "Undefined";
 
-        return `${currency}. ${responseItem.avg}`
+        // return `${currency}. ${responseItem.avg}`;
+        return `${responseItem.avg}`
     }
 
     // Function to update the DOM
@@ -141,7 +143,7 @@ $(document).ready(function () {
 
     // Perform 2nd API call to call info from 1st base country then 2nd compare country
     $.ajax(baseSettings).done(function (baseResponse) {
-        console.log(baseResponse);
+        globalBaseResponse = baseResponse;
 
         const baseCurr = baseResponse.prices[0].currency_code;
         // Add currency to country details
@@ -163,19 +165,19 @@ $(document).ready(function () {
         updateDOM(document.querySelector('.transportBaseTownCost1'), c1TranA);
         updateDOM(document.querySelector('.transportBaseTownCost2'), c1TranB);
         updateDOM(document.querySelector('.housingBaseTownCost1'), c1HouA);
-        updateDOM(document.querySelector('.housingBaseTownCost2'), c1HouA);
+        updateDOM(document.querySelector('.housingBaseTownCost2'), c1HouB);
         updateDOM(document.querySelector('.utilitiesBaseTownCost1'), c1UtiA);
         updateDOM(document.querySelector('.utilitiesBaseTownCost2'), c1UtiB);
 
     });
 
     $.ajax(compareSettings).done(function (compareResponse) {
-        console.log(compareResponse);
+        globalCompareResponse = compareResponse;
 
         const compareCurr = compareResponse.prices[0].currency_code;
         // Add currency to country details
         document.getElementById('c2Currency').innerHTML = compareCurr;
-        
+
         // Get price info
         const c2EduA = getData(compareCurr, compareResponse, 2);
         const c2EduB = getData(compareCurr, compareResponse, 3);
@@ -192,10 +194,157 @@ $(document).ready(function () {
         updateDOM(document.querySelector('.transportCompareTownCost1'), c2TranA);
         updateDOM(document.querySelector('.transportCompareTownCost2'), c2TranB);
         updateDOM(document.querySelector('.housingCompareTownCost1'), c2HouA);
-        updateDOM(document.querySelector('.housingCompareTownCost2'), c2HouA);
+        updateDOM(document.querySelector('.housingCompareTownCost2'), c2HouB);
         updateDOM(document.querySelector('.utilitiesCompareTownCost1'), c2UtiA);
         updateDOM(document.querySelector('.utilitiesCompareTownCost2'), c2UtiB);
 
+    });
+
+    // After getting and setting all data, create charts
+    console.log("Global response ---" + globalBaseResponse);
+
+    // Education
+    const educationContent = document.getElementById('educationCanvas').getContext('2d');
+
+    new Chart(educationContent, {
+        type: 'pie',
+        data: {
+            labels: ['Private School Per Annum', 'Public School Per Annum'],
+            datasets: [
+                {
+                    label: `${baseCapital.toUpperCase()}`,
+                    data: [
+                        358118,
+                        2022
+                        // globalBaseResponse.prices[2].avg,
+                        // globalBaseResponse.prices[3].avg
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: `${compareCapital.toUpperCase()}`,
+                    data: [
+                        parseInt(document.querySelector('.educationCompareTownCost1').innerHTML),
+                        parseInt(document.querySelector('.educationCompareTownCost2').innerHTML)
+                        // globalCompareResponse.prices[2].avg,
+                        // globalCompareResponse.prices[3].avg
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Transport
+    const transportContext = document.getElementById('transportCanvas').getContext('2d');
+
+    new Chart(transportContext, {
+        type: 'bar',
+        data: {
+            labels: ['Gasoline per liter', 'Public Transport Fare'],
+            datasets: [
+                {
+                    label: `${baseCapital.toUpperCase()}`,
+                    data: [
+                        document.querySelector('.transportBaseTownCost1').innerHTML,
+                        document.querySelector('.transportBaseTownCost2').innerHTML
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: `${compareCapital.toUpperCase()}`,
+                    data: [
+                        document.querySelector('.transportCompareTownCost1').innerHTML,
+                        document.querySelector('.transportCompareTownCost2').innerHTML
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Housing 
+    const housingContext = document.getElementById('housingCanvas').getContext('2d');
+
+    new Chart(housingContext, {
+        type: 'line',
+        data: {
+            labels: ['1 Bedroom Apartment', '3 Bedroom Apartment'],
+            datasets: [
+                {
+                    label: `${baseCapital.toUpperCase()}`,
+                    data: [
+                        document.querySelector('.housingBaseTownCost1').innerHTML,
+                        document.querySelector('.housingBaseTownCost2').innerHTML
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: `${compareCapital.toUpperCase()}`,
+                    data: [
+                        document.querySelector('.housingCompareTownCost1').innerHTML,
+                        document.querySelector('.housingCompareTownCost2').innerHTML
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Utilities
+    const utilitiesContext = document.getElementById('utilitiesCanvas').getContext('2d');
+
+    new Chart(utilitiesContext, {
+        type: 'line',
+        data: {
+            labels: ['Basic House Utilities', 'Internet Per Month'],
+            datasets: [
+                {
+                    label: `${baseCapital.toUpperCase()}`,
+                    data: [
+                        document.querySelector('.utilitiesBaseTownCost1').innerHTML,
+                        document.querySelector('.utilitiesBaseTownCost2').innerHTML
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: `${compareCapital.toUpperCase()}`,
+                    data: [
+                        document.querySelector('.utilitiesCompareTownCost1').innerHTML,
+                        document.querySelector('.utilitiesCompareTownCost2').innerHTML
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
     });
 
 });

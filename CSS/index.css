@@ -435,6 +435,7 @@ video {
     background-color: var(--dark-grey);
     border-radius: 8px;
     transition: all .5s ease-in-out;
+    width: 100%;
 }
 
 .accordionHeader,
