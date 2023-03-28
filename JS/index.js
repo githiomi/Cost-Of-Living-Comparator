@@ -91,7 +91,6 @@ $(document).ready(function () {
         $('.base-item').each(function () {
 
             $(this).click(function () {
-                // Change text to clicked
                 baseText.innerHTML = $(this).text();
             });
         });
@@ -101,7 +100,6 @@ $(document).ready(function () {
         $('.compare-item').each(function () {
 
             $(this).click(function () {
-                // Change text to clicked
                 compareText.innerHTML = $(this).text();
             });
         });

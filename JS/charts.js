@@ -1,9 +1,9 @@
-// Universal chart styling
-// Chart.defaults.global.defaultFontFamily = 'Poppins';
-// Chart.defaults.global.defaultFontSize = 18;
-// Chart.defaults.global.defaultFontSize = '#ffffff';
+// Timed function
+setTimeout(createCharts, 1500);
 
-// Education
+function createCharts() {
+
+    // Education
 const educationContent = document.getElementById('educationCanvas').getContext('2d');
 
 new Chart(educationContent, {
@@ -29,11 +29,6 @@ new Chart(educationContent, {
         ]
     },
     options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
     }
 });
 
@@ -138,3 +133,5 @@ new Chart(utilitiesContext, {
         }
     }
 });
+
+}    

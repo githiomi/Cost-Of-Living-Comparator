@@ -71,8 +71,6 @@ const compareSettings = {
 
 // JQuery Functionality when page is loaded
 $(document).ready(function () {
-    var globalBaseResponse;
-    var globalCompareResponse;
 
     // Perform 1st API Call to Facts API
     $.ajax(factsSettings).done((response) => {
@@ -90,8 +88,8 @@ $(document).ready(function () {
         }
 
         // To get the baseCountry
-        baseCountryDetails = getCountry(baseCountry);
-        compareCountryDetails = getCountry(compareCountry);
+        const baseCountryDetails = getCountry(baseCountry);
+        const compareCountryDetails = getCountry(compareCountry);
 
         // Manipulate DOM to contain country details
         // Base Country
@@ -130,8 +128,7 @@ $(document).ready(function () {
 
         if (responseItem == null || responseItem == undefined) return "Undefined";
 
-        // return `${currency}. ${responseItem.avg}`;
-        return `${responseItem.avg}`
+        return `${currency}. ${responseItem.avg}`;
     }
 
     // Function to update the DOM
@@ -143,7 +140,6 @@ $(document).ready(function () {
 
     // Perform 2nd API call to call info from 1st base country then 2nd compare country
     $.ajax(baseSettings).done(function (baseResponse) {
-        globalBaseResponse = baseResponse;
 
         const baseCurr = baseResponse.prices[0].currency_code;
         // Add currency to country details
@@ -172,7 +168,6 @@ $(document).ready(function () {
     });
 
     $.ajax(compareSettings).done(function (compareResponse) {
-        globalCompareResponse = compareResponse;
 
         const compareCurr = compareResponse.prices[0].currency_code;
         // Add currency to country details
@@ -198,153 +193,6 @@ $(document).ready(function () {
         updateDOM(document.querySelector('.utilitiesCompareTownCost1'), c2UtiA);
         updateDOM(document.querySelector('.utilitiesCompareTownCost2'), c2UtiB);
 
-    });
-
-    // After getting and setting all data, create charts
-    console.log("Global response ---" + globalBaseResponse);
-
-    // Education
-    const educationContent = document.getElementById('educationCanvas').getContext('2d');
-
-    new Chart(educationContent, {
-        type: 'pie',
-        data: {
-            labels: ['Private School Per Annum', 'Public School Per Annum'],
-            datasets: [
-                {
-                    label: `${baseCapital.toUpperCase()}`,
-                    data: [
-                        358118,
-                        2022
-                        // globalBaseResponse.prices[2].avg,
-                        // globalBaseResponse.prices[3].avg
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: `${compareCapital.toUpperCase()}`,
-                    data: [
-                        parseInt(document.querySelector('.educationCompareTownCost1').innerHTML),
-                        parseInt(document.querySelector('.educationCompareTownCost2').innerHTML)
-                        // globalCompareResponse.prices[2].avg,
-                        // globalCompareResponse.prices[3].avg
-                    ],
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    // Transport
-    const transportContext = document.getElementById('transportCanvas').getContext('2d');
-
-    new Chart(transportContext, {
-        type: 'bar',
-        data: {
-            labels: ['Gasoline per liter', 'Public Transport Fare'],
-            datasets: [
-                {
-                    label: `${baseCapital.toUpperCase()}`,
-                    data: [
-                        document.querySelector('.transportBaseTownCost1').innerHTML,
-                        document.querySelector('.transportBaseTownCost2').innerHTML
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: `${compareCapital.toUpperCase()}`,
-                    data: [
-                        document.querySelector('.transportCompareTownCost1').innerHTML,
-                        document.querySelector('.transportCompareTownCost2').innerHTML
-                    ],
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    // Housing 
-    const housingContext = document.getElementById('housingCanvas').getContext('2d');
-
-    new Chart(housingContext, {
-        type: 'line',
-        data: {
-            labels: ['1 Bedroom Apartment', '3 Bedroom Apartment'],
-            datasets: [
-                {
-                    label: `${baseCapital.toUpperCase()}`,
-                    data: [
-                        document.querySelector('.housingBaseTownCost1').innerHTML,
-                        document.querySelector('.housingBaseTownCost2').innerHTML
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: `${compareCapital.toUpperCase()}`,
-                    data: [
-                        document.querySelector('.housingCompareTownCost1').innerHTML,
-                        document.querySelector('.housingCompareTownCost2').innerHTML
-                    ],
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    // Utilities
-    const utilitiesContext = document.getElementById('utilitiesCanvas').getContext('2d');
-
-    new Chart(utilitiesContext, {
-        type: 'line',
-        data: {
-            labels: ['Basic House Utilities', 'Internet Per Month'],
-            datasets: [
-                {
-                    label: `${baseCapital.toUpperCase()}`,
-                    data: [
-                        document.querySelector('.utilitiesBaseTownCost1').innerHTML,
-                        document.querySelector('.utilitiesBaseTownCost2').innerHTML
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: `${compareCapital.toUpperCase()}`,
-                    data: [
-                        document.querySelector('.utilitiesCompareTownCost1').innerHTML,
-                        document.querySelector('.utilitiesCompareTownCost2').innerHTML
-                    ],
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
     });
 
 });
