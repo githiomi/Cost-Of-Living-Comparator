@@ -81,7 +81,7 @@
                     <div class="townDescription">
 
                         <ul class="countryDetails">
-                            <li class="countryDetail"> <span class="detailTitle">Country Name: </span><span id="c1Name"
+                            <li class="countryDetail"> <span class="detailTitle">Official Name: </span><span id="c1Name"
                                     class="detailContent"></span> </li>
                             <li class="countryDetail"> <span class="detailTitle">Captial City: </span><span
                                     id="c1Capital" class="detailContent"></span> </li>
@@ -113,7 +113,7 @@
                     <div class="townDescription">
 
                         <ul class="countryDetails">
-                            <li class="countryDetail"> <span class="detailTitle">Country Name: </span><span id="c2Name"
+                            <li class="countryDetail"> <span class="detailTitle">Official Name: </span><span id="c2Name"
                                     class="detailContent"></span> </li>
                             <li class="countryDetail"> <span class="detailTitle">Captial City: </span><span
                                     id="c2Capital" class="detailContent"></span> </li>
@@ -156,6 +156,7 @@
                         <div class="dropdowns">
                             <ul>
                                 <li class="filter-dropdown-item">Education</li>
+                                <li class="filter-dropdown-item">Food</li>
                                 <li class="filter-dropdown-item">Transport</li>
                                 <li class="filter-dropdown-item">Housing</li>
                                 <li class="filter-dropdown-item">Utilities</li>
@@ -207,14 +208,14 @@
 
                                 <div class="countryGrid">
                                     <div class="comparisonItem">Private School Per Annum</div>
-                                    <div class="comparison educationBaseTownCost1"></div>
-                                    <div class="comparison educationCompareTownCost1"></div>
+                                    <div class="comparison educationBaseTownCost1">WST. 6.71</div>
+                                    <div class="comparison educationCompareTownCost1">AFN. 84663.85</div>
                                 </div>
 
                                 <div class="countryGrid">
                                     <div class="comparisonItem">Public School Per Annum</div>
-                                    <div class="comparison educationBaseTownCost2"></div>
-                                    <div class="comparison educationCompareTownCost2"></div>
+                                    <div class="comparison educationBaseTownCost2">WST. 9.87</div>
+                                    <div class="comparison educationCompareTownCost2">AFN. 2714.61</div>
                                 </div>
                             </div>
                         </div>
@@ -223,6 +224,58 @@
                         <div class="canvas">
                             <canvas id="educationCanvas">
                                 <!-- Education canvas goes here -->
+                            </canvas>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header" id="food">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFood" aria-expanded="true" aria-controls="collapseFood">
+                            <div class="accordionHeader">
+                                <div class="accordionName">
+                                    <i class="fa-solid fa-bowl-food accordion-icon"></i> Food
+                                </div>
+                                <div class="accordionPercentage">
+                                    7% cheaper
+                                </div>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="collapseFood" class="accordion-collapse collapse" aria-labelledby="food"
+                        data-bs-parent="#comparisonAccordion">
+                        <div class="accordion-body">
+                            <div class="accordionContent">
+                                <div class="countryGrid">
+                                    <div class="emptyTitle"></div>
+                                    <div class="baseCapital accordionBaseTownName"></div>
+                                    <div class="compareCapital accordionCompareTownName"></div>
+                                </div>
+
+                                <hr>
+
+                                <div class="countryGrid">
+                                    <div class="comparisonItem">1 Kilogram of Rice</div>
+                                    <div class="comparison foodBaseTownCost1"></div>
+                                    <div class="comparison foodCompareTownCost1"></div>
+                                </div>
+
+                                <div class="countryGrid">
+                                    <div class="comparisonItem">1 Liter of Milk</div>
+                                    <div class="comparison foodBaseTownCost2"></div>
+                                    <div class="comparison foodCompareTownCost2"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Canvas Section -->
+                        <div class="canvas">
+                            <canvas id="foodCanvas">
+                                <!-- Food canvas goes here -->
                             </canvas>
                         </div>
 
@@ -408,7 +461,7 @@
     <script defer src="../JS/results.js"></script>
     <script defer src="../JS/charts.js"></script>
     <!-- Scripts End -->
-    
+
 </body>
 
 </html>

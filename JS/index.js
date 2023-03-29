@@ -10,7 +10,7 @@ var type = new Typed(".typewriter", {
 const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 
-const rapidApiKey = apiKeysConfig.factsRapidApiKey;
+// const rapidApiKey = apiKeysConfig.factsRapidApiKey;
 const XRapidApiHost = apiKeysConfig.factsApiHost;
 
 const settings = {
@@ -33,8 +33,6 @@ $(document).ready(function () {
     // Make API call to retrieve all the countries
     $.ajax(settings).done(function (response) {
 
-        console.log(response); // log response to confirm in console
-
         // Get all countries and add them to the countries list
         for (let c = 0; c < response.length; c++) {
             let current = response[c];
@@ -45,7 +43,7 @@ $(document).ready(function () {
             countries[c] = country;
         }
 
-        console.log(countries);
+        console.log(countries);  // log all countries in the console
 
         // Get the template
         const baseTemplate = document.querySelector('[data-base-item-template');

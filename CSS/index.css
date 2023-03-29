@@ -43,6 +43,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    transition: all .2s ease-in-out;
 }
 
 li {
@@ -543,7 +544,7 @@ p>span {
 }
 
 #about .image img:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     transition: all .3s ease-in-out;
 }
 
@@ -722,7 +723,7 @@ textarea {
 
     #about .image img {
         height: 500px;
-        width: 330px;
+        width: 280px;
         border-radius: 10px;
     }
 

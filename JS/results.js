@@ -93,21 +93,21 @@ $(document).ready(function () {
 
         // Manipulate DOM to contain country details
         // Base Country
-        document.getElementById('c1Name').innerHTML = baseCountryDetails.name.common;
+        document.getElementById('c1Name').innerHTML = baseCountryDetails.name.official;
         document.getElementById('c1Capital').innerHTML = baseCountryDetails.capital[0];
         document.getElementById('c1Region').innerHTML = baseCountryDetails.subregion;
         document.getElementById('c1Population').innerHTML = baseCountryDetails.population;
+
         let bLatitude = baseCountryDetails.latlng[0];
         let bLongitude = baseCountryDetails.latlng[1];
         document.getElementById('c1Coordinates').innerHTML = `Lat: ${bLatitude}, Long: ${bLongitude}`;
-
         // Add onclick listener to open map
         document.getElementById('c1Coordinates').setAttribute('href', `https://maps.google.com/?q=${bLatitude}, ${bLongitude}`);
 
         document.getElementById('c1Flag').src = baseCountryDetails.flag;
 
         // Compare Country
-        document.getElementById('c2Name').innerHTML = compareCountryDetails.name.common;
+        document.getElementById('c2Name').innerHTML = compareCountryDetails.name.official;
         document.getElementById('c2Capital').innerHTML = compareCountryDetails.capital[0];
         document.getElementById('c2Region').innerHTML = compareCountryDetails.subregion;
         document.getElementById('c2Population').innerHTML = compareCountryDetails.population;
@@ -148,6 +148,8 @@ $(document).ready(function () {
         // Get price info
         const c1EduA = getData(baseCurr, baseResponse, 2);
         const c1EduB = getData(baseCurr, baseResponse, 3);
+        const c1FoodA = getData(baseCurr, baseResponse, 20);
+        const c1FoodB = getData(baseCurr, baseResponse, 15);
         const c1TranA = getData(baseCurr, baseResponse, 40);
         const c1TranB = getData(baseCurr, baseResponse, 42);
         const c1HouA = getData(baseCurr, baseResponse, 26);
@@ -158,6 +160,8 @@ $(document).ready(function () {
         // Manipulate the DOM
         updateDOM(document.querySelector('.educationBaseTownCost1'), c1EduA);
         updateDOM(document.querySelector('.educationBaseTownCost2'), c1EduB);
+        updateDOM(document.querySelector('.foodBaseTownCost1'), c1FoodA);
+        updateDOM(document.querySelector('.foodBaseTownCost2'), c1FoodB);
         updateDOM(document.querySelector('.transportBaseTownCost1'), c1TranA);
         updateDOM(document.querySelector('.transportBaseTownCost2'), c1TranB);
         updateDOM(document.querySelector('.housingBaseTownCost1'), c1HouA);
@@ -176,6 +180,8 @@ $(document).ready(function () {
         // Get price info
         const c2EduA = getData(compareCurr, compareResponse, 2);
         const c2EduB = getData(compareCurr, compareResponse, 3);
+        const c2FoodA = getData(compareCurr, compareResponse, 20);
+        const c2FoodB = getData(compareCurr, compareResponse, 15);
         const c2TranA = getData(compareCurr, compareResponse, 40);
         const c2TranB = getData(compareCurr, compareResponse, 42);
         const c2HouA = getData(compareCurr, compareResponse, 26);
@@ -186,6 +192,8 @@ $(document).ready(function () {
         // Manipulate the DOM
         updateDOM(document.querySelector('.educationCompareTownCost1'), c2EduA);
         updateDOM(document.querySelector('.educationCompareTownCost2'), c2EduB);
+        updateDOM(document.querySelector('.foodCompareTownCost1'), c2FoodA);
+        updateDOM(document.querySelector('.foodCompareTownCost2'), c2FoodB);
         updateDOM(document.querySelector('.transportCompareTownCost1'), c2TranA);
         updateDOM(document.querySelector('.transportCompareTownCost2'), c2TranB);
         updateDOM(document.querySelector('.housingCompareTownCost1'), c2HouA);
