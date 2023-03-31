@@ -430,6 +430,10 @@ video {
     box-shadow: 2px 2px 10px var(--money-green);
 }
 
+.accordion-item.filteredOut{
+    display: none;
+}
+
 .accordion-item,
 .accordion-item button {
     margin: 1rem;

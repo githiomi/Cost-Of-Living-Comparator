@@ -7,7 +7,6 @@ var type = new Typed(".typewriter", {
 });
 
 // To get country data from the API
-const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 
 const rapidApiKey = apiKeysConfig.factsRapidApiKey;
