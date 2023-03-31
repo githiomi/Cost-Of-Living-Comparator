@@ -9,27 +9,33 @@ function createCharts() {
     new Chart(educationContent, {
         type: 'pie',
         data: {
-            labels: [`${baseCapital} Private School Per Annum`, `${compareCapital} Public School Per Annum`],
+            labels: [`${baseCapital.toUpperCase()}`, `${compareCapital.toUpperCase()}`],
             datasets: [
                 {
-                    label: `${baseCapital.toUpperCase()}`,
+                    label: "Private School Per Annum",
                     data: [
                         document.querySelector('.educationBaseTownCost1').innerHTML,
-                        document.querySelector('.educationBaseTownCost2').innerHTML
+                        document.querySelector('.educationCompareTownCost1').innerHTML
                     ],
-                    borderWidth: 2,
-                    hoverOffset: 3,
-                    hoverBorderColor: '#111'
+                    backgroundColor: [
+                        'rgb(241, 143, 1)',
+                        'rgb(54, 162, 235)'
+                    ],
+                    borderWidth: 1,
+                    hoverOffset: 5
                 },
                 {
-                    label: `${compareCapital.toUpperCase()}`,
+                    label: "Public School Per Annum",
                     data: [
-                        document.querySelector('.educationCompareTownCost1').innerHTML,
+                        document.querySelector('.educationBaseTownCost2').innerHTML,
                         document.querySelector('.educationCompareTownCost2').innerHTML
                     ],
-                    borderWidth: 2,
-                    hoverOffset: 3,
-                    hoverBorderColor: '#111'
+                    backgroundColor: [
+                        'rgb(241, 143, 1)',
+                        'rgb(54, 162, 235)'
+                    ],
+                    borderWidth: 1,
+                    hoverOffset: 5
                 }
             ]
         },
@@ -115,6 +121,12 @@ function createCharts() {
                 y: {
                     beginAtZero: true
                 }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: `TRANSPORT COMPARISON BETWEEN ${baseCapital.toUpperCase()} AND ${compareCapital.toUpperCase()}`
+                }
             }
         }
     });
@@ -125,30 +137,45 @@ function createCharts() {
     new Chart(housingContext, {
         type: 'doughnut',
         data: {
-            labels: ['1 Bedroom Apartment', '3 Bedroom Apartment'],
+            labels: [`${baseCapital.toUpperCase()}`, `${compareCapital.toUpperCase()}`],
             datasets: [
                 {
-                    label: `${baseCapital.toUpperCase()}`,
+                    label: "1 Bedroom Appartment Rent",
                     data: [
                         document.querySelector('.housingBaseTownCost1').innerHTML,
-                        document.querySelector('.housingBaseTownCost2').innerHTML
+                        document.querySelector('.housingCompareTownCost1').innerHTML
                     ],
-                    borderWidth: 1
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)'
+                    ],
+                    borderWidth: 1,
+                    hoverOffset: 5
                 },
                 {
-                    label: `${compareCapital.toUpperCase()}`,
+                    label: "3 Bedroom Appartment Rent",
                     data: [
-                        document.querySelector('.housingCompareTownCost1').innerHTML,
+                        document.querySelector('.housingBaseTownCost2').innerHTML,
                         document.querySelector('.housingCompareTownCost2').innerHTML
                     ],
-                    borderWidth: 1
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)'
+                    ],
+                    borderWidth: 1,
+                    hoverOffset: 5
                 }
             ]
         },
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: `HOUSING COMPARISON BETWEEN ${baseCapital.toUpperCase()} AND ${compareCapital.toUpperCase()}`
                 }
             }
         }
@@ -158,22 +185,23 @@ function createCharts() {
     const utilitiesContext = document.getElementById('utilitiesCanvas').getContext('2d');
 
     new Chart(utilitiesContext, {
-        type: 'line',
         data: {
-            labels: ['Basic House Utilities', 'Internet Per Month'],
+            labels: [`${baseCapital.toUpperCase()}`, `${compareCapital.toUpperCase()}`],
             datasets: [
                 {
-                    label: `${baseCapital.toUpperCase()}`,
+                    type: 'line',
+                    label: 'Basic House Utilities (Electricity, Water)',
                     data: [
                         document.querySelector('.utilitiesBaseTownCost1').innerHTML,
-                        document.querySelector('.utilitiesBaseTownCost2').innerHTML
+                        document.querySelector('.utilitiesCompareTownCost1').innerHTML
                     ],
                     borderWidth: 1
                 },
                 {
-                    label: `${compareCapital.toUpperCase()}`,
+                    type: 'bar',
+                    label: 'Internet Costs Per Month',
                     data: [
-                        document.querySelector('.utilitiesCompareTownCost1').innerHTML,
+                        document.querySelector('.utilitiesBaseTownCost2').innerHTML,
                         document.querySelector('.utilitiesCompareTownCost2').innerHTML
                     ],
                     borderWidth: 1
@@ -181,9 +209,10 @@ function createCharts() {
             ]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+            plugins: {
+                title: {
+                    display: true,
+                    text: `UTILITIES COMPARISON BETWEEN ${baseCapital.toUpperCase()} AND ${compareCapital.toUpperCase()}`
                 }
             }
         }
