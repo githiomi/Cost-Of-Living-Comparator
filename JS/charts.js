@@ -1,5 +1,5 @@
 // Timed function
-setTimeout(createCharts, 3000);
+setTimeout(createCharts, 1000);
 
 function createCharts() {
 
@@ -9,14 +9,17 @@ function createCharts() {
     new Chart(educationContent, {
         type: 'pie',
         data: {
-            labels: ['Private School Per Annum', 'Public School Per Annum'],
+            labels: [`${baseCapital} Private School Per Annum`, `${compareCapital} Public School Per Annum`],
             datasets: [
                 {
                     label: `${baseCapital.toUpperCase()}`,
-                    data: [document.querySelector('.educationBaseTownCost1').innerHTML,
-                    document.querySelector('.educationBaseTownCost2').innerHTML
+                    data: [
+                        document.querySelector('.educationBaseTownCost1').innerHTML,
+                        document.querySelector('.educationBaseTownCost2').innerHTML
                     ],
-                    borderWidth: 1
+                    borderWidth: 2,
+                    hoverOffset: 3,
+                    hoverBorderColor: '#111'
                 },
                 {
                     label: `${compareCapital.toUpperCase()}`,
@@ -24,11 +27,19 @@ function createCharts() {
                         document.querySelector('.educationCompareTownCost1').innerHTML,
                         document.querySelector('.educationCompareTownCost2').innerHTML
                     ],
-                    borderWidth: 1
+                    borderWidth: 2,
+                    hoverOffset: 3,
+                    hoverBorderColor: '#111'
                 }
             ]
         },
         options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: `EDUCATION COMPARISON BETWEEN ${baseCapital.toUpperCase()} AND ${compareCapital.toUpperCase()}`
+                }
+            }
         }
     });
 
@@ -36,21 +47,22 @@ function createCharts() {
     const foodContent = document.getElementById('foodCanvas').getContext('2d');
 
     new Chart(foodContent, {
-        type: 'pie',
+        type: 'line',
         data: {
-            labels: ['Private School Per Annum', 'Public School Per Annum'],
+            labels: [`${baseCapital.toUpperCase()}`, `${compareCapital.toUpperCase()}`],
             datasets: [
                 {
-                    label: `${baseCapital.toUpperCase()}`,
-                    data: [document.querySelector('.foodBaseTownCost1').innerHTML,
-                    document.querySelector('.foodBaseTownCost2').innerHTML
+                    label: "1 Kilogram of Rice",
+                    data: [
+                        document.querySelector('.foodBaseTownCost1').innerHTML,
+                        document.querySelector('.foodCompareTownCost1').innerHTML
                     ],
                     borderWidth: 1
                 },
                 {
-                    label: `${compareCapital.toUpperCase()}`,
+                    label: "1 Liter of Milk",
                     data: [
-                        document.querySelector('.foodCompareTownCost1').innerHTML,
+                        document.querySelector('.foodBaseTownCost2').innerHTML,
                         document.querySelector('.foodCompareTownCost2').innerHTML
                     ],
                     borderWidth: 1
@@ -58,6 +70,17 @@ function createCharts() {
             ]
         },
         options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: `FOOD COMPARISON BETWEEN ${baseCapital.toUpperCase()} AND ${compareCapital.toUpperCase()}`
+                }
+            }
         }
     });
 
@@ -71,8 +94,9 @@ function createCharts() {
             datasets: [
                 {
                     label: `${baseCapital.toUpperCase()}`,
-                    data: [document.querySelector('.transportBaseTownCost1').innerHTML,
-                    document.querySelector('.transportBaseTownCost2').innerHTML
+                    data: [
+                        document.querySelector('.transportBaseTownCost1').innerHTML,
+                        document.querySelector('.transportBaseTownCost2').innerHTML
                     ],
                     borderWidth: 1
                 },
@@ -99,14 +123,15 @@ function createCharts() {
     const housingContext = document.getElementById('housingCanvas').getContext('2d');
 
     new Chart(housingContext, {
-        type: 'line',
+        type: 'doughnut',
         data: {
             labels: ['1 Bedroom Apartment', '3 Bedroom Apartment'],
             datasets: [
                 {
                     label: `${baseCapital.toUpperCase()}`,
-                    data: [document.querySelector('.housingBaseTownCost1').innerHTML,
-                    document.querySelector('.housingBaseTownCost2').innerHTML
+                    data: [
+                        document.querySelector('.housingBaseTownCost1').innerHTML,
+                        document.querySelector('.housingBaseTownCost2').innerHTML
                     ],
                     borderWidth: 1
                 },
@@ -139,8 +164,9 @@ function createCharts() {
             datasets: [
                 {
                     label: `${baseCapital.toUpperCase()}`,
-                    data: [document.querySelector('.utilitiesBaseTownCost1').innerHTML,
-                    document.querySelector('.utilitiesBaseTownCost2').innerHTML
+                    data: [
+                        document.querySelector('.utilitiesBaseTownCost1').innerHTML,
+                        document.querySelector('.utilitiesBaseTownCost2').innerHTML
                     ],
                     borderWidth: 1
                 },
