@@ -249,34 +249,6 @@ video {
     justify-content: center;
 }
 
-.fa-magnifying-glass-location{
-    color: var(--money-green);
-}
-
-.dropdownSeachBar{
-    width: 100%;
-    margin: 0;
-    padding: .5rem;
-    border: none;
-    border-bottom: 1px solid var(--money-green);
-    border-radius: 0;
-    color: var(--money-green);
-    font-size: .9rem;
-}
-
-.dropdownSeachBar:focus{
-    background-color: var(--transparent);
-    border: none;
-    outline: none;
-    border-bottom: 1px solid var(--money-green);
-    color: var(--money-green);
-}
-
-.dropdownSeachBar::placeholder{
-    color: var(--money-green);
-    font-size: .9rem;
-}
-
 .dropdown-item:hover, .filter-dropdown-item:hover {
     background-color: rgba(241, 145, 1, 0.3);
     transform: translateY(-2px);

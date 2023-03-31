@@ -28,6 +28,7 @@ $(document).ready(function () {
 
     // List to store all retrieved countries
     let countries = [];
+    let filter_countries = [];
 
     // Make API call to retrieve all the countries
     $.ajax(settings).done(function (response) {
@@ -42,8 +43,6 @@ $(document).ready(function () {
             countries[c] = country;
         }
 
-        console.log(countries);  // log all countries in the console
-
         // Get the template
         const baseTemplate = document.querySelector('[data-base-item-template');
         const compareTemplate = document.querySelector('[data-compare-item-template');
@@ -53,7 +52,7 @@ $(document).ready(function () {
             for (let i = 0; i < countries.length; i++) {
 
                 let template = baseTemplate.content.cloneNode(true);
-                let itemName = template.querySelector('[data-base-item');
+                let itemName = template.querySelector('[data-base-item]');
 
                 currentCountry = countries[i];
                 itemName.textContent = `${currentCountry.name}, ${currentCountry.capital}`;
@@ -67,7 +66,7 @@ $(document).ready(function () {
             for (let i = 0; i < countries.length; i++) {
 
                 let template = compareTemplate.content.cloneNode(true);
-                let itemName = template.querySelector('[data-compare-item');
+                let itemName = template.querySelector('[data-compare-item]');
 
                 currentCountry = countries[i];
                 itemName.textContent = `${currentCountry.name}, ${currentCountry.capital}`;
@@ -100,14 +99,6 @@ $(document).ready(function () {
                 compareText.innerHTML = $(this).text();
             });
         });
-
-        // Filter functionality
-        const baseSearchBar = document.getElementById('baseSearchBar').addEventListener("input", e => {
-            console.log(e.target.value);
-        });
-        const compareSearchBar = document.getElementById('compareSearchBar').addEventListener("input", e => {
-            console.log(e.target.value);
-        })
 
     });
 

@@ -41,7 +41,7 @@ const factsSettings = {
 
 // 2nd API Call Config
 // const rapidApiKey = apiKeysConfig.pricesRapidApiKey;
-const rapidApiHost = apiKeysConfig.costOfLivingApiHost;
+const rapidApiHost = apiKeysConfig.pricesApiHost;
 
 let baseUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${baseCapital}&country_name=${baseCountry}`;
 const baseSettings = {
