@@ -52,7 +52,7 @@ You will need to have the following installed on your system:
 
 * Git clone [this](https://github.com/githiomi/Cost-Of-Living-Comparator.git) repository into your terminal.  
 * Open the folder in your favourite editor (for example Visual Studio Code)
-* With your Rapid API keys, update the **index.js** and **results.js** files
+* With your Rapid API keys, update the **index.js** and **results.js** files with your valid API key
 * Ensure that the Apache and MySQl servers are running on XAMPP
 * Navigate to the directory containing the cloned repository and open it using "localhost"
 * Open and enjoy the website
