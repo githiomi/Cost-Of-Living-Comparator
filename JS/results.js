@@ -127,7 +127,7 @@ $(document).ready(function () {
 
         if (responseItem == null || responseItem == undefined) return "Not Provided";
 
-        return `${responseItem.avg}`;
+        return `${parseFloat(responseItem.usd.avg)}`;
     }
 
     // Function to update the DOM
