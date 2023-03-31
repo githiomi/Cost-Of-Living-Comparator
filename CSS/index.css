@@ -516,7 +516,6 @@ p>span {
 #about .image img {
     height: 100%;
     width: 480px;
-    border-radius: 0 200px 0 0;
 }
 
 #about .image img:hover {
