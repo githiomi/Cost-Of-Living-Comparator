@@ -24,7 +24,7 @@ for (let i = 0; i < baseCapitals.length; i++) {
 // To get country data from the API
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 
-// const factsRapidApiKey = apiKeysConfig.factsRapidApiKey;
+const factsRapidApiKey = apiKeysConfig.factsRapidApiKey;
 const factsRapidApiHost = apiKeysConfig.factsApiHost;
 
 const factsSettings = {
@@ -40,7 +40,7 @@ const factsSettings = {
 // 1st API Call Config End
 
 // 2nd API Call Config
-// const rapidApiKey = apiKeysConfig.pricesRapidApiKey;
+const rapidApiKey = apiKeysConfig.pricesRapidApiKey;
 const rapidApiHost = apiKeysConfig.pricesApiHost;
 
 let baseUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${baseCapital}&country_name=${baseCountry}`;

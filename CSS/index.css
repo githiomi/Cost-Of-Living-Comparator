@@ -978,4 +978,9 @@ textarea {
     .subHeader {
         font-size: 15px;
     }
+
+    /* About Page */
+    .socials ul{
+        flex-direction: column;
+    }
 }
