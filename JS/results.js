@@ -25,7 +25,7 @@ for (let i = 0; i < baseCapitals.length; i++) {
 const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 
-// const factsRapidApiKey = apiKeysConfig.factsRapidApiKey;
+const factsRapidApiKey = apiKeysConfig.factsRapidApiKey;
 const factsRapidApiHost = apiKeysConfig.factsApiHost;
 
 const factsSettings = {
@@ -41,7 +41,7 @@ const factsSettings = {
 // 1st API Call Config End
 
 // 2nd API Call Config
-// const rapidApiKey = apiKeysConfig.pricesRapidApiKey;
+const rapidApiKey = apiKeysConfig.pricesRapidApiKey;
 const rapidApiHost = apiKeysConfig.costOfLivingApiHost;
 
 let baseUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${baseCapital}&country_name=${baseCountry}`;
@@ -126,9 +126,9 @@ $(document).ready(function () {
     function getData(currency, response, itemId) {
         let responseItem = response.prices[itemId];
 
-        if (responseItem == null || responseItem == undefined) return "Undefined";
+        if (responseItem == null || responseItem == undefined) return "Not Provided";
 
-        return `${currency}. ${responseItem.avg}`;
+        return `${responseItem.avg}`;
     }
 
     // Function to update the DOM

@@ -1,5 +1,5 @@
 // Timed function
-setTimeout(createCharts, 1000);
+setTimeout(createCharts, 2000);
 
 function createCharts() {
 

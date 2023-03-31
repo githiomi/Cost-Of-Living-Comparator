@@ -10,7 +10,7 @@ var type = new Typed(".typewriter", {
 const countryFactsUrlAfrica = "https://country-facts.p.rapidapi.com/region/africa";
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 
-// const rapidApiKey = apiKeysConfig.factsRapidApiKey;
+const rapidApiKey = apiKeysConfig.factsRapidApiKey;
 const XRapidApiHost = apiKeysConfig.factsApiHost;
 
 const settings = {
