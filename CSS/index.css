@@ -106,6 +106,13 @@ video {
     opacity: 0.5;
 }
 
+#navbar{
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
 .navigation {
     height: 150px;
     padding: 15px 0;
@@ -180,9 +187,18 @@ video {
     cursor: pointer;
 }
 
-.dribble a i {
+.dribble a i, .bottom_dribble a i {
     color: var(--money-green);
     font-size: 50px;
+}
+
+.bottom_dribble{
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 0;
+    text-align: center;
+    cursor: pointer;
 }
 
 .search {
