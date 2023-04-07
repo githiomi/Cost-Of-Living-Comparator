@@ -105,6 +105,17 @@ $(document).ready(function () {
 
         document.getElementById('c1Flag').src = baseCountryDetails.flag;
 
+        // Add base map
+        let baseMap = L.map('baseMap').setView([bLatitude, bLongitude], 5);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(baseMap);
+
+        L.marker([bLatitude, bLongitude]).addTo(baseMap)
+            .bindPopup(`${baseCountryDetails.name.official}`)
+            .openPopup();
+
         // Compare Country
         document.getElementById('c2Name').innerHTML = compareCountryDetails.name.official;
         document.getElementById('c2Capital').innerHTML = compareCountryDetails.capital[0];
@@ -118,6 +129,17 @@ $(document).ready(function () {
         document.getElementById('c2Coordinates').setAttribute('href', `https://maps.google.com/?q=${cLatitude}, ${cLongitude}`);
 
         document.getElementById('c2Flag').src = compareCountryDetails.flag;
+
+        // Add compare map
+        let compareMap = L.map('compareMap').setView([cLatitude, cLongitude], 5);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(compareMap);
+
+        L.marker([cLatitude, cLongitude]).addTo(compareMap)
+            .bindPopup(`${compareCountryDetails.name.official}`)
+            .openPopup();
 
     });
 

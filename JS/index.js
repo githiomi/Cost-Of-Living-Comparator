@@ -28,7 +28,6 @@ $(document).ready(function () {
 
     // List to store all retrieved countries
     let countries = [];
-    let filter_countries = [];
 
     // Make API call to retrieve all the countries
     $.ajax(settings).done(function (response) {

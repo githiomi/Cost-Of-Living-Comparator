@@ -557,6 +557,10 @@ p>span {
     transition: all 0.5s ease-in-out;
 }
 
+#baseMap, #compareMap{
+    height: 200px;
+}
+
 /* About Page End */
 
 /* Contact Page Start */
