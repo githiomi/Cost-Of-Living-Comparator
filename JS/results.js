@@ -24,8 +24,11 @@ for (let i = 0; i < baseCapitals.length; i++) {
 // To get country data from the API
 const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 
-const factsRapidApiKey = apiKeysConfig.factsRapidApiKey;
-const factsRapidApiHost = apiKeysConfig.factsApiHost;
+// const factsRapidApiKey = apiKeysConfig.factsRapidApiKey;
+// const factsRapidApiHost = apiKeysConfig.factsApiHost;
+
+const factsRapidApiKey = '6be39fc74emsh49a66936dfb631bp17d8aajsn686d83456a0e';
+const factsRapidApiHost = 'country-facts.p.rapidapi.com';
 
 const factsSettings = {
     "async": true,
@@ -40,8 +43,11 @@ const factsSettings = {
 // 1st API Call Config End
 
 // 2nd API Call Config
-const rapidApiKey = apiKeysConfig.pricesRapidApiKey;
-const rapidApiHost = apiKeysConfig.pricesApiHost;
+// const rapidApiKey = apiKeysConfig.pricesRapidApiKey;
+// const rapidApiHost = apiKeysConfig.pricesApiHost;
+
+const rapidApiKey = 'd66f3e0275msh6e1eb0655795b8fp1dfa31jsn4e5dfbdd171e';
+const rapidApiHost = 'cost-of-living-and-prices.p.rapidapi.com';
 
 let baseUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${baseCapital}&country_name=${baseCountry}`;
 const baseSettings = {
@@ -106,7 +112,7 @@ $(document).ready(function () {
         document.getElementById('c1Flag').src = baseCountryDetails.flag;
 
         // Add base map
-        let baseMap = L.map('baseMap').setView([bLatitude, bLongitude], 5);
+        let baseMap = L.map('baseMap').setView([bLatitude, bLongitude], 8);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -131,7 +137,7 @@ $(document).ready(function () {
         document.getElementById('c2Flag').src = compareCountryDetails.flag;
 
         // Add compare map
-        let compareMap = L.map('compareMap').setView([cLatitude, cLongitude], 5);
+        let compareMap = L.map('compareMap').setView([cLatitude, cLongitude], 8);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
