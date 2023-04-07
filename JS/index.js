@@ -106,7 +106,7 @@ $(document).ready(function () {
 
     // Add onclick listener to compare button
     const compareButton = document.getElementById('compareBtn');
-    compareButton.addEventListener('click', () => {
+    compareButton.addEventListener('click', (e) => {
 
         // Adding the search bar content to local storage
         var key = 'searchData';
@@ -124,11 +124,13 @@ $(document).ready(function () {
         // Error handling
         if (baseCapital == undefined) {
             alert('Please select a base country and its capital 🤖!');
+            e.preventDefault();
             return;
         }
 
         if (compareCapital == undefined) {
             alert('Please select a compare country and its capital 🤖!');
+            e.preventDefault();
             return;
         }
 
@@ -139,7 +141,7 @@ $(document).ready(function () {
             compareCountry: compareCountry
         }));
 
-        window.location.href = '../HTML/results.html';
+        // compareButton.href = '../HTML/results.html';
 
     });
 
