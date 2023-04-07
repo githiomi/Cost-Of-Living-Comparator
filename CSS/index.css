@@ -828,7 +828,7 @@ textarea {
         display: block;
     }
 
-    .dribble a i {
+    .dribble a i, .bottom_dribble a i {
         font-size: 40px;
     }
 

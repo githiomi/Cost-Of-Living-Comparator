@@ -27,7 +27,7 @@ const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 // const factsRapidApiKey = apiKeysConfig.factsRapidApiKey;
 // const factsRapidApiHost = apiKeysConfig.factsApiHost;
 
-const factsRapidApiKey = '6be39fc74emsh49a66936dfb631bp17d8aajsn686d83456a0e';
+const factsRapidApiKey = 'ae0503632cmshf55a0292cd3b5fbp17d4a3jsn2aa3340d9736';
 const factsRapidApiHost = 'country-facts.p.rapidapi.com';
 
 const factsSettings = {
@@ -46,7 +46,7 @@ const factsSettings = {
 // const rapidApiKey = apiKeysConfig.pricesRapidApiKey;
 // const rapidApiHost = apiKeysConfig.pricesApiHost;
 
-const rapidApiKey = 'd66f3e0275msh6e1eb0655795b8fp1dfa31jsn4e5dfbdd171e';
+const rapidApiKey = 'ae0503632cmshf55a0292cd3b5fbp17d4a3jsn2aa3340d9736';
 const rapidApiHost = 'cost-of-living-and-prices.p.rapidapi.com';
 
 let baseUrl = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${baseCapital}&country_name=${baseCountry}`;

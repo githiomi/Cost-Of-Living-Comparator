@@ -12,7 +12,7 @@ const countryFactsUrlAll = "https://country-facts.p.rapidapi.com/all";
 // const rapidApiKey = apiKeysConfig.factsRapidApiKey;
 // const XRapidApiHost = apiKeysConfig.factsApiHost;
 
-const rapidApiKey = '6be39fc74emsh49a66936dfb631bp17d8aajsn686d83456a0e';
+const rapidApiKey = 'ae0503632cmshf55a0292cd3b5fbp17d4a3jsn2aa3340d9736';
 const XRapidApiHost = 'country-facts.p.rapidapi.com';
 
 const settings = {
